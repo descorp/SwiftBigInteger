@@ -10,6 +10,11 @@
 		40357AE91FB887680083561A /* BigInteger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40357ADF1FB887670083561A /* BigInteger.framework */; };
 		40357AEE1FB887680083561A /* BigIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357AED1FB887680083561A /* BigIntegerTests.swift */; };
 		40357AF01FB887680083561A /* BigInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 40357AE21FB887680083561A /* BigInteger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40357AFB1FB887D60083561A /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357AFA1FB887D60083561A /* BigInteger.swift */; };
+		40357AFF1FB88B400083561A /* BigInteger+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357AFE1FB88B400083561A /* BigInteger+Equatable.swift */; };
+		40357B011FB88B8C0083561A /* BigInteger+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B001FB88B8C0083561A /* BigInteger+Copy.swift */; };
+		40357B031FB88C660083561A /* BigInteger+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B021FB88C660083561A /* BigInteger+Comparable.swift */; };
+		40357B051FB88CA20083561A /* BigInteger+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B041FB88CA20083561A /* BigInteger+Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		40357AE81FB887680083561A /* BigIntegerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigIntegerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40357AED1FB887680083561A /* BigIntegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIntegerTests.swift; sourceTree = "<group>"; };
 		40357AEF1FB887680083561A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40357AFA1FB887D60083561A /* BigInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
+		40357AFE1FB88B400083561A /* BigInteger+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Equatable.swift"; sourceTree = "<group>"; };
+		40357B001FB88B8C0083561A /* BigInteger+Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Copy.swift"; sourceTree = "<group>"; };
+		40357B021FB88C660083561A /* BigInteger+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Comparable.swift"; sourceTree = "<group>"; };
+		40357B041FB88CA20083561A /* BigInteger+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Operators.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,11 @@
 			children = (
 				40357AE21FB887680083561A /* BigInteger.h */,
 				40357AE31FB887680083561A /* Info.plist */,
+				40357AFA1FB887D60083561A /* BigInteger.swift */,
+				40357AFE1FB88B400083561A /* BigInteger+Equatable.swift */,
+				40357B001FB88B8C0083561A /* BigInteger+Copy.swift */,
+				40357B021FB88C660083561A /* BigInteger+Comparable.swift */,
+				40357B041FB88CA20083561A /* BigInteger+Operators.swift */,
 			);
 			path = BigInteger;
 			sourceTree = "<group>";
@@ -148,6 +163,7 @@
 				TargetAttributes = {
 					40357ADE1FB887670083561A = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					40357AE71FB887680083561A = {
@@ -196,6 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40357B051FB88CA20083561A /* BigInteger+Operators.swift in Sources */,
+				40357AFF1FB88B400083561A /* BigInteger+Equatable.swift in Sources */,
+				40357AFB1FB887D60083561A /* BigInteger.swift in Sources */,
+				40357B011FB88B8C0083561A /* BigInteger+Copy.swift in Sources */,
+				40357B031FB88C660083561A /* BigInteger+Comparable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +355,7 @@
 		40357AF41FB887680083561A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.descorp.pods.BigInteger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +378,7 @@
 		40357AF51FB887680083561A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +400,7 @@
 		40357AF71FB887680083561A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R596F9CQZ5;
 				INFOPLIST_FILE = BigIntegerTests/Info.plist;
@@ -390,6 +415,7 @@
 		40357AF81FB887680083561A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R596F9CQZ5;
 				INFOPLIST_FILE = BigIntegerTests/Info.plist;
