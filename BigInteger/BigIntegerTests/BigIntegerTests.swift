@@ -11,26 +11,69 @@ import XCTest
 
 class BigIntegerTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testInit() {
+        let a = BigInteger()
+        XCTAssertEqual(a.description, "0")
+        XCTAssertTrue(a.positive)
+        
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInitWithValue() {
+        let a = BigInteger(value: 5)
+        XCTAssertEqual(a.description, "5")
+        XCTAssertTrue(a.positive)
     }
     
-    func testExample() {
+    func testInitWithNegativeValue() {
+        let a = BigInteger(value: -5)
+        XCTAssertEqual(a.description, "-5")
+        XCTAssertFalse(a.positive)
+    }
+    
+    func testInitFromUInt64() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
+    func testInitFromString() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testCompare() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testMultiply() {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+    
+    func testAdd() {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+    
+    func testNegation() {
+        let a = BigInteger(value: -5)
+        let b = BigInteger(value: 5)
+        
+        XCTAssertFalse(a.positive)
+        XCTAssertTrue(b.positive)
+        XCTAssertFalse((-b).positive)
+        XCTAssertTrue((-a).positive)
+        
+        XCTAssertFalse(a == b, "a != b")
+        XCTAssertTrue(a == -b, "a = -b")
+        XCTAssertTrue(-a == b, "-a = b")
+        XCTAssertFalse(-a == -b, "-a != -b")
     }
     
 }

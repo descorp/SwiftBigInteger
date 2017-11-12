@@ -15,6 +15,13 @@
 		40357B011FB88B8C0083561A /* BigInteger+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B001FB88B8C0083561A /* BigInteger+Copy.swift */; };
 		40357B031FB88C660083561A /* BigInteger+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B021FB88C660083561A /* BigInteger+Comparable.swift */; };
 		40357B051FB88CA20083561A /* BigInteger+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B041FB88CA20083561A /* BigInteger+Operators.swift */; };
+		40357B061FB88D7E0083561A /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357AFA1FB887D60083561A /* BigInteger.swift */; };
+		40357B071FB88D860083561A /* BigInteger+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357AFE1FB88B400083561A /* BigInteger+Equatable.swift */; };
+		40357B081FB88D860083561A /* BigInteger+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B001FB88B8C0083561A /* BigInteger+Copy.swift */; };
+		40357B091FB88D860083561A /* BigInteger+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B021FB88C660083561A /* BigInteger+Comparable.swift */; };
+		40357B0A1FB88D860083561A /* BigInteger+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B041FB88CA20083561A /* BigInteger+Operators.swift */; };
+		40357B0C1FB88E430083561A /* BigInteger+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */; };
+		40357B0D1FB90F470083561A /* BigInteger+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,7 @@
 		40357B001FB88B8C0083561A /* BigInteger+Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Copy.swift"; sourceTree = "<group>"; };
 		40357B021FB88C660083561A /* BigInteger+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Comparable.swift"; sourceTree = "<group>"; };
 		40357B041FB88CA20083561A /* BigInteger+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Operators.swift"; sourceTree = "<group>"; };
+		40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 				40357B001FB88B8C0083561A /* BigInteger+Copy.swift */,
 				40357B021FB88C660083561A /* BigInteger+Comparable.swift */,
 				40357B041FB88CA20083561A /* BigInteger+Operators.swift */,
+				40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */,
 			);
 			path = BigInteger;
 			sourceTree = "<group>";
@@ -217,6 +226,7 @@
 				40357AFB1FB887D60083561A /* BigInteger.swift in Sources */,
 				40357B011FB88B8C0083561A /* BigInteger+Copy.swift in Sources */,
 				40357B031FB88C660083561A /* BigInteger+Comparable.swift in Sources */,
+				40357B0C1FB88E430083561A /* BigInteger+CustomStringConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40357B071FB88D860083561A /* BigInteger+Equatable.swift in Sources */,
 				40357AEE1FB887680083561A /* BigIntegerTests.swift in Sources */,
+				40357B0D1FB90F470083561A /* BigInteger+CustomStringConvertible.swift in Sources */,
+				40357B081FB88D860083561A /* BigInteger+Copy.swift in Sources */,
+				40357B061FB88D7E0083561A /* BigInteger.swift in Sources */,
+				40357B091FB88D860083561A /* BigInteger+Comparable.swift in Sources */,
+				40357B0A1FB88D860083561A /* BigInteger+Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
