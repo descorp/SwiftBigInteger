@@ -11,33 +11,34 @@ import Foundation
 struct BigInteger {
     
     internal var array: [Int8]
-    var positive: Bool 
+    var sign: Bool
     
-    init(value: Int = 0) {
-        positive = value >= 0
-        array = BigInteger.splitOnDigits(UInt64(abs(value)))
+    init() {
+        sign = true
+        array = [0]
     }
     
-    init(value: Int64) {
-        positive = value >= 0
-        array = BigInteger.splitOnDigits(UInt64(abs(value)))
+    init<T: UnsignedInteger>(value: T) {
+        sign = true
+        array = splitOnDigits(value)
     }
     
-    init(value: UInt64) {
-        positive = value >= 0
-        array = BigInteger.splitOnDigits(value)
+    init<T: SignedInteger>(value: T) {
+        sign = value >= 0
+        array = splitOnDigits(value)
     }
     
-    private static func splitOnDigits(_ value: UInt64) -> [Int8] {
-        var result = [Int8]()
+    init?(value: String) {
+        guard value.isValidNumber else { return nil }
         var temp = value
-        
-        while temp > 0 {
-            result.append(Int8(temp % 10))
-            temp = temp / 10
+        if value.hasPrefix("-") {
+            sign = false
+            temp.removeFirst(1)
+        } else {
+            sign = true
         }
         
-        return result
+        array = convertFrom(temp)
     }
 }
 

@@ -12,7 +12,7 @@ extension BigInteger {
     internal func copy() -> BigInteger {
         var result = BigInteger()
         result.array = self.array
-        result.positive = self.positive
+        result.sign = self.sign
         return result
     }
 }

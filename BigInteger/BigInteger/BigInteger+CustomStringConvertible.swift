@@ -17,7 +17,7 @@ extension BigInteger : CustomStringConvertible {
     /// example:
     var description: String {
         var str = ""
-        array.reversed().forEach { i in str += String(i) }
-        return str
+        array.forEach { i in str += String(i) }
+        return (sign ? "" : "-" ) + str
     }
 }

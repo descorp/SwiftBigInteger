@@ -14,66 +14,118 @@ class BigIntegerTests: XCTestCase {
     func testInit() {
         let a = BigInteger()
         XCTAssertEqual(a.description, "0")
-        XCTAssertTrue(a.positive)
-        
+        XCTAssertTrue(a.sign)
     }
     
     func testInitWithValue() {
         let a = BigInteger(value: 5)
         XCTAssertEqual(a.description, "5")
-        XCTAssertTrue(a.positive)
+        XCTAssertTrue(a.sign)
     }
     
     func testInitWithNegativeValue() {
-        let a = BigInteger(value: -5)
-        XCTAssertEqual(a.description, "-5")
-        XCTAssertFalse(a.positive)
+        let a = BigInteger(value: -1234567)
+        XCTAssertEqual(a.description, "-1234567")
+        XCTAssertFalse(a.sign)
     }
     
-    func testInitFromUInt64() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitWithPositiveString() {
+        let str = "-123456789012345678901234567890"
+        let a = BigInteger(value: str)
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, str)
+        XCTAssertFalse(a!.sign)
     }
     
-    func testInitFromString() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitWithNegativeString() {
+        let str = "-123456789012345678901234567890"
+        let a = BigInteger(value: str)
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, str)
+        XCTAssertFalse(a!.sign)
+    }
+    
+    func testInitWithInvalidString() {
+        let str = "0.123456789012345678901234567890"
+        let a = BigInteger(value: str)
+        XCTAssertNil(a)
+    }
+    
+    func testInitWithLongString() {
+        var str = ""
+        var result: [Int8] = []
+        for _ in 0...200 {
+            let i = Int8(arc4random() % 10)
+            str += String(i)
+            result.append(i)
+        }
+        let a = BigInteger(value: str)
+        
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, result.toString())
+    }
+    
+    func testInitWithLongNegativeString() {
+        var str = "-"
+        var result: [Int8] = []
+        for _ in 0...200 {
+            let i = Int8(arc4random() % 10)
+            str += String(i)
+            result.append(i)
+        }
+        let a = BigInteger(value: str)
+        
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, result.toString(prefix: "-"))
+    }
+    
+    func testCompareWithZero() {
+        let a = BigInteger()
+        let b = BigInteger(value: -42)
+        let c = BigInteger(value: 42)
+        
+        XCTAssertTrue(a > b)
+        XCTAssertTrue(b < a)
+        XCTAssertTrue(a >= b)
+        XCTAssertTrue(b <= a)
+        XCTAssertTrue(c > a)
+        XCTAssertTrue(a < c)
+        XCTAssertTrue(c >= a)
+        XCTAssertTrue(a <= c)
     }
     
     func testCompare() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
-    func testMultiply() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
-    func testAdd() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        let a = BigInteger(value: 42)
+        let b = BigInteger(value: -42)
+        
+        XCTAssertTrue(a > b)
+        XCTAssertTrue(b < a)
+        XCTAssertTrue(a >= b)
+        XCTAssertTrue(b <= a)
     }
     
     func testNegation() {
         let a = BigInteger(value: -5)
         let b = BigInteger(value: 5)
         
-        XCTAssertFalse(a.positive)
-        XCTAssertTrue(b.positive)
-        XCTAssertFalse((-b).positive)
-        XCTAssertTrue((-a).positive)
+        XCTAssertFalse(a.sign)
+        XCTAssertTrue(b.sign)
+        XCTAssertFalse((-b).sign)
+        XCTAssertTrue((-a).sign)
         
         XCTAssertFalse(a == b, "a != b")
         XCTAssertTrue(a == -b, "a = -b")
         XCTAssertTrue(-a == b, "-a = b")
         XCTAssertFalse(-a == -b, "-a != -b")
     }
+}
+
+extension Array where Element: BinaryInteger {
     
+    /// Agregates all elements of Integer-based array into one string
+    /// - Parameter prefix: string sequence that will be placed before actual content of the array
+    /// - Returns: A string that agregates whole array into one string
+    func toString(prefix: String = "") -> String {
+        return self.reduce(prefix) { (current, next) in current + String(describing: next)}
+    }
 }

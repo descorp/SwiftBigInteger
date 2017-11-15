@@ -12,15 +12,15 @@ extension BigInteger {
     
     // MARK: addition
     static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func +(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func +=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -36,15 +36,15 @@ extension BigInteger {
     
     // MARK: subtraction
     static func -(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func -(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func -(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func -=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -60,15 +60,15 @@ extension BigInteger {
     
     // MARK: multiplication
     static func *(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func *(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func *(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func *=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -84,15 +84,15 @@ extension BigInteger {
     
     // MARK: division
     static func /(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func /(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func /(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger()
+        return BigInteger.init()
     }
     
     static func /=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -109,7 +109,7 @@ extension BigInteger {
     // MARK: negation
     static prefix func -(item: BigInteger) -> BigInteger {
         var result = item.copy()
-        result.positive = !result.positive
+        result.sign = !result.sign
         return result
     }
     

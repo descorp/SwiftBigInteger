@@ -56,7 +56,7 @@ extension BigInteger: Comparable {
     }
     
     static private func equal(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
-        switch (lhs.positive, rhs.positive) {
+        switch (lhs.sign, rhs.sign) {
         case let (a, b) where a == b && !a:
             return -BigInteger.equal(-lhs, -rhs)
         case let (a, b):

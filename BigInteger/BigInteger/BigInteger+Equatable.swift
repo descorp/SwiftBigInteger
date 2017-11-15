@@ -12,7 +12,7 @@ import Foundation
 
 extension BigInteger: Equatable {
     static func ==(lhs: BigInteger, rhs: BigInteger) -> Bool {
-        if lhs.positive != rhs.positive {
+        if lhs.sign != rhs.sign {
             return false
         }
         
