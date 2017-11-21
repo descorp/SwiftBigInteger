@@ -20,7 +20,7 @@ class ConvertersTests: XCTestCase {
     }
     
     func testSplitOnDigitsLong() {
-            XCTAssertEqual(splitOnDigits(UInt64.init(1234567890987654.0)), [4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1])
+            XCTAssertEqual(splitOnDigitsAndReverse(UInt64.init(1234567890987654.0)), [4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1])
     }
     
     func testConvertFrom() {
