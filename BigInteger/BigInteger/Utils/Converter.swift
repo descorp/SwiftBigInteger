@@ -14,7 +14,7 @@ internal let numberRegex = "^(-?)[1-9][0-9]*$"
  - Parameter value: Always positive integer value (UInt, UInt64 e.t.c)
  - Returns: An array of Int8
  */
-internal func splitOnDigits<T: UnsignedInteger>(_ value: T) -> [Int8] {
+internal func splitOnDigitsAndReverse<T: UnsignedInteger>(_ value: T) -> [Int8] {
     var result = [Int8]()
     var temp = value
     
@@ -31,7 +31,7 @@ internal func splitOnDigits<T: UnsignedInteger>(_ value: T) -> [Int8] {
  - Returns: An array of Int8
  */
 internal func splitOnDigitsAndReverse<T: SignedInteger>(_ value: T) -> [Int8] {
-    return splitOnDigits(UInt64(abs(value)))
+    return splitOnDigitsAndReverse(UInt64(abs(value)))
 }
 
 /** Converts string that contains only Numeric chars into array of Int8
