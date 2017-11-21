@@ -108,7 +108,7 @@ extension BigInteger {
     
     // MARK: negation
     static prefix func -(item: BigInteger) -> BigInteger {
-        var result = item.copy()
+        var result = item
         result.sign = !result.sign
         return result
     }
@@ -118,8 +118,8 @@ extension BigInteger {
         if(rhs == 0) { return BigInteger(value: 1) }
         if(rhs == 1) { return lhs }
         
-        var temp = lhs.copy()
-        for i in 1...rhs {
+        var temp = lhs
+        for _ in 1...rhs {
             temp *= lhs
         }
         
