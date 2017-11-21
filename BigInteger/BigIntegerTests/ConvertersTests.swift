@@ -38,4 +38,9 @@ class ConvertersTests: XCTestCase {
         
         XCTAssertEqual(convertFrom(str), result)
     }
+    
+    func testArrayTrim() {
+        XCTAssertEqual([1,2,3].trimZeros(), [1,2,3])
+        XCTAssertEqual([1,2,3,0,0,0].trimZeros(), [1,2,3])
+    }
 }
