@@ -32,4 +32,12 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertEqual(Array.compare(lhs: a, rhs: b), 1)
         XCTAssertEqual(Array.compare(lhs: b, rhs: a), -1)
     }
+    
+    func testEquilLenght2() {
+        let a = [0]
+        let b = [1]
+        
+        XCTAssertEqual(Array.compare(lhs: a, rhs: b), -1)
+        XCTAssertEqual(Array.compare(lhs: b, rhs: a), 1)
+    }
 }
