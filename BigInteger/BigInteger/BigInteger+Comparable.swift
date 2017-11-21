@@ -22,7 +22,7 @@ extension BigInteger: Comparable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
-        return BigInteger.equal(lhs, rhs) < 0
+        return BigInteger.compare(lhs, rhs) < 0
     }
     
     /// Returns a Boolean value indicating whether the value of the first
@@ -32,7 +32,7 @@ extension BigInteger: Comparable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <=(lhs: BigInteger, rhs: BigInteger) -> Bool {
-        return BigInteger.equal(lhs, rhs) <= 0
+        return BigInteger.compare(lhs, rhs) <= 0
     }
     
     /// Returns a Boolean value indicating whether the value of the first
@@ -42,7 +42,7 @@ extension BigInteger: Comparable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func >=(lhs: BigInteger, rhs: BigInteger) -> Bool {
-        return BigInteger.equal(lhs, rhs) >= 0
+        return BigInteger.compare(lhs, rhs) >= 0
     }
     
     /// Returns a Boolean value indicating whether the value of the first
@@ -52,10 +52,10 @@ extension BigInteger: Comparable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func >(lhs: BigInteger, rhs: BigInteger) -> Bool {
-        return BigInteger.equal(lhs, rhs) > 0
+        return BigInteger.compare(lhs, rhs) > 0
     }
     
-    static private func equal(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
+    static private func compare(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
         switch (lhs.sign, rhs.sign) {
         case let (a, b) where a == b && !a:
             return -BigInteger.equal(-lhs, -rhs)
