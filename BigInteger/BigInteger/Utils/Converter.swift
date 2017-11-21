@@ -23,7 +23,7 @@ internal func splitOnDigits<T: UnsignedInteger>(_ value: T) -> [Int8] {
         temp = temp / 10
     }
     
-    return result.reversed()
+    return result
 }
 
 /** Converts integer value into array of Int8
@@ -44,13 +44,4 @@ internal func convertFrom(_ text: String) -> [Int8] {
         result.append(Int8(c.value - 48))
     }
     return result
-}
-
-extension String {
-    /** Check is string contains only digits or sign chars, and do not starts with 0
-     - Returns: Is string is valid Integer string
-     */
-    internal var isValidNumber: Bool {
-        return self.range(of: numberRegex, options: .regularExpression, range: nil, locale: nil) != nil
-    }
 }

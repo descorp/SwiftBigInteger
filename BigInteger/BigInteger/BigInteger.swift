@@ -20,12 +20,12 @@ struct BigInteger {
     
     init<T: UnsignedInteger>(value: T) {
         sign = true
-        array = splitOnDigits(value)
+        array = splitOnDigits(value).reversed()
     }
     
     init<T: SignedInteger>(value: T) {
         sign = value >= 0
-        array = splitOnDigits(value)
+        array = splitOnDigits(value).reversed()
     }
     
     init?(value: String) {
@@ -38,7 +38,7 @@ struct BigInteger {
             sign = true
         }
         
-        array = convertFrom(temp)
+        array = convertFrom(temp).reversed()
     }
 }
 

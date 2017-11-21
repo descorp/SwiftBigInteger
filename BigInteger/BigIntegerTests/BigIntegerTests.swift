@@ -79,13 +79,3 @@ class BigIntegerTests: XCTestCase {
         XCTAssertEqual(a?.description, result.toString(prefix: "-"))
     }
 }
-
-extension Array where Element: BinaryInteger {
-    
-    /// Agregates all elements of Integer-based array into one string
-    /// - Parameter prefix: string sequence that will be placed before actual content of the array
-    /// - Returns: A string that agregates whole array into one string
-    func toString(prefix: String = "") -> String {
-        return self.reduce(prefix) { (current, next) in current + String(describing: next)}
-    }
-}

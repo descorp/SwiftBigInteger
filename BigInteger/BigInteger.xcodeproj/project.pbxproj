@@ -23,6 +23,8 @@
 		40491CCD1FC4BECC00BB8087 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CCC1FC4BECC00BB8087 /* ArrayExtensions.swift */; };
 		40491CCF1FC4C2D800BB8087 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CCE1FC4C2D800BB8087 /* ArrayExtensionTests.swift */; };
 		40491CD01FC4C33600BB8087 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CCC1FC4BECC00BB8087 /* ArrayExtensions.swift */; };
+		40491CD21FC4CCCC00BB8087 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD11FC4CCCC00BB8087 /* StringExtensions.swift */; };
+		40491CD31FC4CDC600BB8087 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD11FC4CCCC00BB8087 /* StringExtensions.swift */; };
 		409073181FB9EAA900BFABE7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409073171FB9EAA900BFABE7 /* Converter.swift */; };
 		409073191FBC510B00BFABE7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409073171FB9EAA900BFABE7 /* Converter.swift */; };
 		4090731B1FBC520C00BFABE7 /* ConvertersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4090731A1FBC520C00BFABE7 /* ConvertersTests.swift */; };
@@ -56,6 +58,7 @@
 		40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		40491CCC1FC4BECC00BB8087 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		40491CCE1FC4C2D800BB8087 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		40491CD11FC4CCCC00BB8087 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		409073171FB9EAA900BFABE7 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		4090731A1FBC520C00BFABE7 /* ConvertersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertersTests.swift; sourceTree = "<group>"; };
 		4090731C1FBC7FD600BFABE7 /* BigIntegerMultiplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIntegerMultiplicationTests.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			children = (
 				409073171FB9EAA900BFABE7 /* Converter.swift */,
 				40491CCC1FC4BECC00BB8087 /* ArrayExtensions.swift */,
+				40491CD11FC4CCCC00BB8087 /* StringExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40491CD21FC4CCCC00BB8087 /* StringExtensions.swift in Sources */,
 				40357B051FB88CA20083561A /* BigInteger+Operators.swift in Sources */,
 				40357AFF1FB88B400083561A /* BigInteger+Equatable.swift in Sources */,
 				40491CCD1FC4BECC00BB8087 /* ArrayExtensions.swift in Sources */,
@@ -277,6 +282,7 @@
 				40491CD01FC4C33600BB8087 /* ArrayExtensions.swift in Sources */,
 				4090731D1FBC7FD600BFABE7 /* BigIntegerMultiplicationTests.swift in Sources */,
 				40357B061FB88D7E0083561A /* BigInteger.swift in Sources */,
+				40491CD31FC4CDC600BB8087 /* StringExtensions.swift in Sources */,
 				40357B091FB88D860083561A /* BigInteger+Comparable.swift in Sources */,
 				40357B0A1FB88D860083561A /* BigInteger+Operators.swift in Sources */,
 			);

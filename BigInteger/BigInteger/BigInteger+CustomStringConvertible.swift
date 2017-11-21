@@ -16,8 +16,6 @@ extension BigInteger : CustomStringConvertible {
     /// type to a string by using the `String(describing:)` initializer. For
     /// example:
     var description: String {
-        var str = ""
-        array.forEach { i in str += String(i) }
-        return (sign ? "" : "-" ) + str
+        return (sign ? "" : "-" ) + array.reversed().toString()
     }
 }
