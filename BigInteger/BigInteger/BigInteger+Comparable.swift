@@ -57,24 +57,15 @@ extension BigInteger: Comparable {
     
     static private func compare(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
         switch (lhs.sign, rhs.sign) {
-        case let (a, b) where a == b && !a:
-            return -BigInteger.equal(-lhs, -rhs)
-        case let (a, b):
-            return !a && b ? 1 : -1
+        case let (a, b) where a == b && !a :
+            return BigInteger.compare(-rhs, -lhs)
+        case let (a, b) where a != b:
+            return a ? 1 : -1
+        default:
+            break
         }
         
-        if lhs.array.count != rhs.array.count {
-            return lhs.array.count < rhs.array.count ? -1 : 1
-        }
-        
-        for i in (lhs.array.count-1)...0 {
-            let lhsv = lhs.array[i]
-            let rhsv = rhs.array[i]
-            if lhsv != rhsv {
-                return lhsv < rhsv ? -1 : 1
-            }
-        }
-        
-        return 0
+        let comparison = Array.compare(lhs: lhs.array, rhs: rhs.array)
+        return lhs.sign ? comparison : -comparison
     }
 }
