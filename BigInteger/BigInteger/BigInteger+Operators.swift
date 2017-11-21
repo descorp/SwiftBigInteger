@@ -12,23 +12,56 @@ extension BigInteger {
     
     // MARK: addition
     static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger.init()
+        switch (lhs.sign, rhs.sign) {
+        case let (a, b) where a == b:
+            return BigInteger.add(lhs, rhs)
+        default:
+            return lhs.sign ? BigInteger.subtract(lhs, rhs) : BigInteger.subtract(rhs, lhs)
+        }
     }
     
     static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger.init()
+        return lhs + BigInteger(value: rhs)
     }
     
     static func +(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger.init()
+        return rhs + BigInteger(value: lhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: BigInteger) {
-        
+        lhs = lhs + rhs
     }
     
     static func +=(lhs: inout BigInteger, rhs: Int) {
+        lhs = lhs + BigInteger(value: rhs)
+    }
+    
+    static internal func add(_ lhs: BigInteger, _ rhs: BigInteger) -> BigInteger {
+        var biggest, smallest : [Int8]
+        if lhs.array.count > rhs.array.count {
+            biggest = lhs.array
+            smallest = rhs.array
+        } else {
+            biggest = rhs.array
+            smallest = lhs.array
+        }
         
+        var i = 0
+        while i < smallest.count {
+            let value = biggest[i] + smallest[i]
+            biggest[i] =  value % 10
+            
+            if value / 10 > 0 {
+                if biggest.count > i + 1 {
+                    biggest[i + 1] += 1
+                } else {
+                    biggest.append(1)
+                }
+            }
+            i += 1
+        }
+        
+        return BigInteger(raw: biggest, sign: lhs.sign)
     }
 }
 
@@ -36,23 +69,66 @@ extension BigInteger {
     
     // MARK: subtraction
     static func -(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        return BigInteger.init()
+        switch (lhs.sign, rhs.sign) {
+        case let (a, b) where a == b:
+            return BigInteger.subtract(lhs, rhs)
+        default:
+            return BigInteger.add(lhs, rhs)
+        }
     }
     
     static func -(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger.init()
+        return lhs - BigInteger(value: rhs)
     }
     
     static func -(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger.init()
+        return BigInteger(value: lhs) - rhs
     }
     
     static func -=(lhs: inout BigInteger, rhs: BigInteger) {
-        
+        lhs = lhs - rhs
     }
     
     static func -=(lhs: inout BigInteger, rhs: Int) {
+        lhs = lhs - BigInteger(value: rhs)
+    }
+    
+    static internal func subtract(_ lhs: BigInteger, _ rhs: BigInteger) -> BigInteger {
+        var biggest, smallest : [Int8]
+        var sign: Bool
+
+        let compare = Array.compare(lhs.array, rhs.array)
+        if compare > 0 {
+            biggest = lhs.array
+            smallest = rhs.array
+            sign = lhs.sign
+        } else if compare < 0 {
+            biggest = rhs.array
+            smallest = lhs.array
+            sign = !rhs.sign
+        } else {
+            return BigInteger()
+        }
         
+        var i = 0
+        while i < smallest.count {
+            let value = Int(biggest[i]) - Int(smallest[i])
+            if value < 0 {
+                var n = i + 1
+                while biggest[n] == 0 {
+                    biggest[n] = 9
+                    n += 1
+                }
+                
+                biggest[n] -= 1
+            } else {
+                biggest[i] = Int8(abs(value))
+            }
+            
+            i += 1
+        }
+        
+        return BigInteger(raw: biggest, sign: sign)
     }
 }
 

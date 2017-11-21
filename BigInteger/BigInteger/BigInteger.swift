@@ -40,5 +40,10 @@ struct BigInteger {
         
         array = convertFrom(temp).reversed()
     }
+    
+    internal init(raw array: [Int8], sign: Bool) {
+        self.array = array.trimZeros()
+        self.sign = sign
+    }
 }
 
