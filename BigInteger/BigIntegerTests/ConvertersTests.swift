@@ -12,15 +12,15 @@ import XCTest
 class ConvertersTests: XCTestCase {
     
     func testSplitOnDigits() {
-            XCTAssertEqual(splitOnDigits(123456789), [1,2,3,4,5,6,7,8,9])
+            XCTAssertEqual(splitOnDigitsAndReverse(123456789), [9,8,7,6,5,4,3,2,1])
     }
     
     func testSplitOnDigitsNegative() {
-            XCTAssertEqual(splitOnDigits(-123456789), [1,2,3,4,5,6,7,8,9])
+            XCTAssertEqual(splitOnDigitsAndReverse(-123456789), [9,8,7,6,5,4,3,2,1])
     }
     
     func testSplitOnDigitsLong() {
-            XCTAssertEqual(splitOnDigits(UInt64.init(1234567890987654.0)), [1,2,3,4,5,6,7,8,9,0,9,8,7,6,5,4])
+            XCTAssertEqual(splitOnDigits(UInt64.init(1234567890987654.0)), [4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1])
     }
     
     func testConvertFrom() {

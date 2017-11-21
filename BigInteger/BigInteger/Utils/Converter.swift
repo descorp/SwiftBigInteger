@@ -30,7 +30,7 @@ internal func splitOnDigits<T: UnsignedInteger>(_ value: T) -> [Int8] {
  - Parameter value: Any integer value (Int, Int64 e.t.c)
  - Returns: An array of Int8
  */
-internal func splitOnDigits<T: SignedInteger>(_ value: T) -> [Int8] {
+internal func splitOnDigitsAndReverse<T: SignedInteger>(_ value: T) -> [Int8] {
     return splitOnDigits(UInt64(abs(value)))
 }
 
