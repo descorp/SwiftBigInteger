@@ -12,12 +12,17 @@ extension BigInteger {
     
     // MARK: subtraction
     static func -(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        switch (lhs.sign, rhs.sign) {
-        case let (a, b) where a == b:
-            return BigInteger.subtract(lhs, rhs)
-        default:
-            return BigInteger.add(lhs, rhs)
+        if lhs.sign == rhs.sign {
+            let value = BigInteger.subtract(lhs.array, rhs.array)
+            if value == [0] {
+                return BigInteger()
+            }
+            
+            let comparisom = Array.compare(lhs.array, rhs.array)
+            return BigInteger(raw: value, sign: comparisom > 0 ? lhs.sign : !lhs.sign)
         }
+        
+        return lhs + -rhs
     }
     
     static func -(lhs: BigInteger, rhs: Int) -> BigInteger {
@@ -36,21 +41,18 @@ extension BigInteger {
         lhs = lhs - BigInteger(value: rhs)
     }
     
-    static internal func subtract(_ lhs: BigInteger, _ rhs: BigInteger) -> BigInteger {
+    static internal func subtract(_ lhs: [Int8], _ rhs: [Int8]) -> [Int8] {
         var biggest, smallest : [Int8]
-        var sign: Bool
         
-        let compare = Array.compare(lhs.array, rhs.array)
+        let compare = Array.compare(lhs, rhs)
         if compare > 0 {
-            biggest = lhs.array
-            smallest = rhs.array
-            sign = lhs.sign
+            biggest = lhs
+            smallest = rhs
         } else if compare < 0 {
-            biggest = rhs.array
-            smallest = lhs.array
-            sign = !rhs.sign
+            biggest = rhs
+            smallest = lhs
         } else {
-            return BigInteger()
+            return [0]
         }
         
         var i = 0
@@ -71,6 +73,6 @@ extension BigInteger {
             i += 1
         }
         
-        return BigInteger(raw: biggest, sign: sign)
+        return biggest
     }
 }

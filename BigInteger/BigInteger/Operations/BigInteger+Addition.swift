@@ -12,12 +12,12 @@ extension BigInteger {
     
     // MARK: addition
     static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        switch (lhs.sign, rhs.sign) {
-        case let (a, b) where a == b:
-            return BigInteger.add(lhs, rhs)
-        default:
-            return lhs.sign ? BigInteger.subtract(lhs, rhs) : BigInteger.subtract(rhs, lhs)
+        if lhs.sign == rhs.sign {
+            let result = BigInteger.add(lhs.array, rhs.array)
+            return BigInteger(raw: result, sign: lhs.sign)
         }
+        
+        return lhs - -rhs
     }
     
     static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
@@ -36,14 +36,14 @@ extension BigInteger {
         lhs = lhs + BigInteger(value: rhs)
     }
     
-    static internal func add(_ lhs: BigInteger, _ rhs: BigInteger) -> BigInteger {
+    static internal func add(_ lhs: [Int8], _ rhs: [Int8]) -> [Int8] {
         var biggest, smallest : [Int8]
-        if lhs.array.count > rhs.array.count {
-            biggest = lhs.array
-            smallest = rhs.array
+        if lhs.count > rhs.count {
+            biggest = lhs
+            smallest = rhs
         } else {
-            biggest = rhs.array
-            smallest = lhs.array
+            biggest = rhs
+            smallest = lhs
         }
         
         var i = 0
@@ -61,6 +61,6 @@ extension BigInteger {
             i += 1
         }
         
-        return BigInteger(raw: biggest, sign: lhs.sign)
+        return biggest
     }
 }

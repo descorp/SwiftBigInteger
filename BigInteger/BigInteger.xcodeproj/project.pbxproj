@@ -30,6 +30,7 @@
 		40491CDA1FC4E24A00BB8087 /* BigInteger+Multiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD91FC4E24A00BB8087 /* BigInteger+Multiplication.swift */; };
 		40491CDB1FC4E27C00BB8087 /* BigInteger+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD51FC4E22500BB8087 /* BigInteger+Addition.swift */; };
 		40491CDC1FC4E29900BB8087 /* BigInteger+Subtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD71FC4E23500BB8087 /* BigInteger+Subtraction.swift */; };
+		40491CDD1FC4E2DE00BB8087 /* BigInteger+Multiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40491CD91FC4E24A00BB8087 /* BigInteger+Multiplication.swift */; };
 		409073181FB9EAA900BFABE7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409073171FB9EAA900BFABE7 /* Converter.swift */; };
 		409073191FBC510B00BFABE7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409073171FB9EAA900BFABE7 /* Converter.swift */; };
 		4090731B1FBC520C00BFABE7 /* ConvertersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4090731A1FBC520C00BFABE7 /* ConvertersTests.swift */; };
@@ -309,6 +310,7 @@
 				40491CD31FC4CDC600BB8087 /* StringExtensions.swift in Sources */,
 				40357B091FB88D860083561A /* BigInteger+Comparable.swift in Sources */,
 				40357B0A1FB88D860083561A /* BigInteger+Math.swift in Sources */,
+				40491CDD1FC4E2DE00BB8087 /* BigInteger+Multiplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
