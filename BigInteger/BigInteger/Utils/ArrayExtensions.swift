@@ -10,8 +10,11 @@ import Foundation
 
 extension Array where Element: Comparable {
     
-    /// Compare two arrays by lenght
-    internal static func compare(lhs: Array, rhs: Array) -> Int {
+    /// Compare two arrays of BinaryInteger
+    /// - Parameter lhs: first array
+    /// - Parameter rhs: second array
+    /// - Returns: Result of comparison (-1 - smaller; 0 - equal; +1 - bigger)
+    internal static func compare(_ lhs: Array, _ rhs: Array) -> Int {
         if lhs.count != rhs.count {
             return lhs.count > rhs.count ? 1 : -1
         }
@@ -32,10 +35,12 @@ extension Array where Element: Comparable {
 
 extension Array where Element: BinaryInteger {
     
+    /// Trim all zeros from the end of array
+    /// - Returns: trimmed array
     internal func trimZeros() -> Array {
         var temp = self
-        while temp[0] == 0 && temp.count > 1 {
-            temp.remove(at: 0)
+        while temp.last == 0 && temp.count > 1 {
+            temp.remove(at: temp.count-1)
         }
         
         return temp
