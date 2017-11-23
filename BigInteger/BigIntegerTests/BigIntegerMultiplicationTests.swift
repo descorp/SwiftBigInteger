@@ -38,7 +38,7 @@ class BigIntegerMultiplicationTests: XCTestCase {
         let a = BigInteger(value: -1)
         let b = BigInteger(value: 123456)
         let result = a * b
-        XCTAssertEqual(result, BigInteger(value: 123456))
+        XCTAssertEqual(result, BigInteger(value: -123456))
         XCTAssertFalse(result.sign)
     }
     
