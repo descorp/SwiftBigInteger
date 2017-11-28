@@ -17,21 +17,16 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         XCTAssertTrue(a != b)
         XCTAssertTrue(b != a)
         XCTAssertTrue(a == -b)
-        XCTAssertTrue(b == -a)
-        XCTAssertTrue(a == a)
-        XCTAssertTrue(b == b)
     }
     
     func testEquilitySigned() {
-        let b = BigInteger(value: -42)
-        let a : UInt = 42
+        let a = BigInteger(value: 42)
+        let b = -42
         
         XCTAssertTrue(a != b)
         XCTAssertTrue(b != a)
         XCTAssertTrue(a == -b)
         XCTAssertTrue(b == -a)
-        XCTAssertTrue(a == a)
-        XCTAssertTrue(b == b)
     }
     
     func testCompareSigned() {
@@ -55,11 +50,9 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         XCTAssertTrue(a < b)
         XCTAssertTrue(b > a)
         XCTAssertTrue(a <= b)
-        XCTAssertTrue(a <= -b)
         XCTAssertTrue(-a <= b)
         XCTAssertTrue(b >= a)
         XCTAssertTrue(b >= -a)
-        XCTAssertTrue(-b >= a)
     }
     
     func testNegation() {

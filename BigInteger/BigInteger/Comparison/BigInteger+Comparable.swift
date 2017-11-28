@@ -55,7 +55,7 @@ extension BigInteger: Comparable {
         return BigInteger.compare(lhs, rhs) > 0
     }
     
-    static private func compare(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
+    static internal func compare(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
         switch (lhs.sign, rhs.sign) {
         case let (a, b) where a == b && !a :
             return BigInteger.compare(-rhs, -lhs)
@@ -69,3 +69,5 @@ extension BigInteger: Comparable {
         return lhs.sign ? comparison : -comparison
     }
 }
+
+
