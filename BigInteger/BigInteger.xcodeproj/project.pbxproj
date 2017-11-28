@@ -48,6 +48,10 @@
 		40DBDE7D1FCDEFF100FE1594 /* BigInteger+NotEquatableInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE7C1FCDEFF100FE1594 /* BigInteger+NotEquatableInt.swift */; };
 		40DBDE7E1FCDF1B500FE1594 /* BigInteger+EquatableInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE7A1FCDEFBB00FE1594 /* BigInteger+EquatableInt.swift */; };
 		40DBDE7F1FCDF1B800FE1594 /* BigInteger+NotEquatableInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE7C1FCDEFF100FE1594 /* BigInteger+NotEquatableInt.swift */; };
+		40DBDE811FCDFA1500FE1594 /* BigInteger+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE801FCDFA1500FE1594 /* BigInteger+Hashable.swift */; };
+		40DBDE821FCDFA7C00FE1594 /* BigInteger+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE801FCDFA1500FE1594 /* BigInteger+Hashable.swift */; };
+		40DBDE841FCDFCFE00FE1594 /* IntSubtractionBigIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE831FCDFCFE00FE1594 /* IntSubtractionBigIntegerTests.swift */; };
+		40DBDE861FCDFD2500FE1594 /* BigIntegerSubtractionIntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBDE851FCDFD2500FE1594 /* BigIntegerSubtractionIntTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,9 @@
 		40DBDE751FCDED8100FE1594 /* BigInteger+ComparableInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BigInteger+ComparableInt.swift"; sourceTree = "<group>"; };
 		40DBDE7A1FCDEFBB00FE1594 /* BigInteger+EquatableInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+EquatableInt.swift"; sourceTree = "<group>"; };
 		40DBDE7C1FCDEFF100FE1594 /* BigInteger+NotEquatableInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BigInteger+NotEquatableInt.swift"; sourceTree = "<group>"; };
+		40DBDE801FCDFA1500FE1594 /* BigInteger+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigInteger+Hashable.swift"; sourceTree = "<group>"; };
+		40DBDE831FCDFCFE00FE1594 /* IntSubtractionBigIntegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntSubtractionBigIntegerTests.swift; sourceTree = "<group>"; };
+		40DBDE851FCDFD2500FE1594 /* BigIntegerSubtractionIntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIntegerSubtractionIntTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +146,7 @@
 				40357AE31FB887680083561A /* Info.plist */,
 				40357AFA1FB887D60083561A /* BigInteger.swift */,
 				40357B0B1FB88E430083561A /* BigInteger+CustomStringConvertible.swift */,
+				40DBDE801FCDFA1500FE1594 /* BigInteger+Hashable.swift */,
 			);
 			path = BigInteger;
 			sourceTree = "<group>";
@@ -146,16 +154,15 @@
 		40357AEC1FB887680083561A /* BigIntegerTests */ = {
 			isa = PBXGroup;
 			children = (
+				40DBDE8C1FCDFDDB00FE1594 /* Compare */,
+				40DBDE8B1FCDFDB200FE1594 /* Multiplication */,
+				40DBDE8A1FCDFDA800FE1594 /* Addition */,
+				40DBDE871FCDFD4000FE1594 /* Subtraction */,
 				40491CCE1FC4C2D800BB8087 /* ArrayExtensionTests.swift */,
-				409073221FBC9B0C00BFABE7 /* BigIntegerCompareTests.swift */,
-				409073201FBC835200BFABE7 /* BigIntegerSubtractionTests.swift */,
-				4090731E1FBC802E00BFABE7 /* BigIntegerAdditionTests.swift */,
-				4090731C1FBC7FD600BFABE7 /* BigIntegerMultiplicationTests.swift */,
 				4090731A1FBC520C00BFABE7 /* ConvertersTests.swift */,
 				40357AED1FB887680083561A /* BigIntegerTests.swift */,
-				40357AEF1FB887680083561A /* Info.plist */,
 				40DBDE701FCDC41D00FE1594 /* RealLifeTests.swift */,
-				40DBDE721FCDC50F00FE1594 /* BigIntegerCompareWithOtherTypesTests.swift */,
+				40357AEF1FB887680083561A /* Info.plist */,
 			);
 			path = BigIntegerTests;
 			sourceTree = "<group>";
@@ -192,6 +199,41 @@
 				40DBDE7C1FCDEFF100FE1594 /* BigInteger+NotEquatableInt.swift */,
 			);
 			path = Comparison;
+			sourceTree = "<group>";
+		};
+		40DBDE871FCDFD4000FE1594 /* Subtraction */ = {
+			isa = PBXGroup;
+			children = (
+				409073201FBC835200BFABE7 /* BigIntegerSubtractionTests.swift */,
+				40DBDE831FCDFCFE00FE1594 /* IntSubtractionBigIntegerTests.swift */,
+				40DBDE851FCDFD2500FE1594 /* BigIntegerSubtractionIntTests.swift */,
+			);
+			path = Subtraction;
+			sourceTree = "<group>";
+		};
+		40DBDE8A1FCDFDA800FE1594 /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				4090731E1FBC802E00BFABE7 /* BigIntegerAdditionTests.swift */,
+			);
+			path = Addition;
+			sourceTree = "<group>";
+		};
+		40DBDE8B1FCDFDB200FE1594 /* Multiplication */ = {
+			isa = PBXGroup;
+			children = (
+				4090731C1FBC7FD600BFABE7 /* BigIntegerMultiplicationTests.swift */,
+			);
+			path = Multiplication;
+			sourceTree = "<group>";
+		};
+		40DBDE8C1FCDFDDB00FE1594 /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				40DBDE721FCDC50F00FE1594 /* BigIntegerCompareWithOtherTypesTests.swift */,
+				409073221FBC9B0C00BFABE7 /* BigIntegerCompareTests.swift */,
+			);
+			path = Compare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +354,7 @@
 				40357AFF1FB88B400083561A /* BigInteger+Equatable.swift in Sources */,
 				40DBDE761FCDED8100FE1594 /* BigInteger+ComparableUInt.swift in Sources */,
 				40DBDE771FCDED8100FE1594 /* BigInteger+ComparableInt.swift in Sources */,
+				40DBDE811FCDFA1500FE1594 /* BigInteger+Hashable.swift in Sources */,
 				40491CCD1FC4BECC00BB8087 /* ArrayExtensions.swift in Sources */,
 				40DBDE7B1FCDEFBB00FE1594 /* BigInteger+EquatableInt.swift in Sources */,
 				40357AFB1FB887D60083561A /* BigInteger.swift in Sources */,
@@ -333,6 +376,7 @@
 				40357AEE1FB887680083561A /* BigIntegerTests.swift in Sources */,
 				4090731B1FBC520C00BFABE7 /* ConvertersTests.swift in Sources */,
 				40491CCF1FC4C2D800BB8087 /* ArrayExtensionTests.swift in Sources */,
+				40DBDE861FCDFD2500FE1594 /* BigIntegerSubtractionIntTests.swift in Sources */,
 				40DBDE731FCDC50F00FE1594 /* BigIntegerCompareWithOtherTypesTests.swift in Sources */,
 				409073211FBC835200BFABE7 /* BigIntegerSubtractionTests.swift in Sources */,
 				409073191FBC510B00BFABE7 /* Converter.swift in Sources */,
@@ -341,7 +385,9 @@
 				40491CD01FC4C33600BB8087 /* ArrayExtensions.swift in Sources */,
 				4090731D1FBC7FD600BFABE7 /* BigIntegerMultiplicationTests.swift in Sources */,
 				40DBDE711FCDC41D00FE1594 /* RealLifeTests.swift in Sources */,
+				40DBDE821FCDFA7C00FE1594 /* BigInteger+Hashable.swift in Sources */,
 				40DBDE781FCDEF0300FE1594 /* BigInteger+ComparableInt.swift in Sources */,
+				40DBDE841FCDFCFE00FE1594 /* IntSubtractionBigIntegerTests.swift in Sources */,
 				40DBDE791FCDEF0700FE1594 /* BigInteger+ComparableUInt.swift in Sources */,
 				40DBDE7E1FCDF1B500FE1594 /* BigInteger+EquatableInt.swift in Sources */,
 				40491CDB1FC4E27C00BB8087 /* BigInteger+Addition.swift in Sources */,
