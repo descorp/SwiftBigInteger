@@ -10,9 +10,9 @@ import XCTest
 
 class BigIntegerCompareWithOtherTypesTests: XCTestCase {
     
-    func testEquility() {
+    func testEquilityUnsigned() {
         let b = BigInteger(value: -42)
-        let a = 42
+        let a : UInt = 42
         
         XCTAssertTrue(a != b)
         XCTAssertTrue(b != a)
@@ -22,29 +22,44 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         XCTAssertTrue(b == b)
     }
     
-    func testCompareWithZero() {
-        let a = BigInteger()
-        let b = -42
-        let c = BigInteger(value: 42)
+    func testEquilitySigned() {
+        let b = BigInteger(value: -42)
+        let a : UInt = 42
         
-        XCTAssertTrue(a > b, " \(a) > \(b)")
-        XCTAssertTrue(b < a)
-        XCTAssertTrue(a >= b)
-        XCTAssertTrue(b <= a)
-        XCTAssertTrue(c > a)
-        XCTAssertTrue(a < c)
-        XCTAssertTrue(c >= a)
-        XCTAssertTrue(a <= c)
+        XCTAssertTrue(a != b)
+        XCTAssertTrue(b != a)
+        XCTAssertTrue(a == -b)
+        XCTAssertTrue(b == -a)
+        XCTAssertTrue(a == a)
+        XCTAssertTrue(b == b)
     }
     
-    func testCompare() {
-        let a = BigInteger(value: 42)
-        let b = -42
+    func testCompareSigned() {
+        let b = BigInteger(value: 42)
+        let a = -42
         
-        XCTAssertTrue(a > b)
-        XCTAssertTrue(b < a)
-        XCTAssertTrue(a >= b)
-        XCTAssertTrue(b <= a)
+        XCTAssertTrue(a < b)
+        XCTAssertTrue(b > a)
+        XCTAssertTrue(a <= b)
+        XCTAssertTrue(a <= -b)
+        XCTAssertTrue(-a <= b)
+        XCTAssertTrue(b >= a)
+        XCTAssertTrue(b >= -a)
+        XCTAssertTrue(-b >= a)
+    }
+    
+    func testCompareUnsigned() {
+        let a = BigInteger(value: -42)
+        let b : UInt = 42
+        
+        XCTAssertTrue(a < b)
+        XCTAssertTrue(b > a)
+        XCTAssertTrue(a <= b)
+        XCTAssertTrue(a <= -b)
+        XCTAssertTrue(-a <= b)
+        XCTAssertTrue(b >= a)
+        XCTAssertTrue(b >= -a)
+        XCTAssertTrue(-b >= a)
     }
     
     func testNegation() {
@@ -54,9 +69,9 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         XCTAssertFalse(a.sign)
         XCTAssertTrue((-a).sign)
         
-        XCTAssertFalse(a == b, "a != b")
-        XCTAssertTrue(a == -b, "a = -b")
-        XCTAssertTrue(-a == b, "-a = b")
-        XCTAssertFalse(-a == -b, "-a != -b")
+        XCTAssertFalse(a == b)
+        XCTAssertTrue(a == -b)
+        XCTAssertTrue(-a == b)
+        XCTAssertFalse(-a == -b)
     }
 }
