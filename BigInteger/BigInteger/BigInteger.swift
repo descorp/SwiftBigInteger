@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Implementation of Big integer value.
 struct BigInteger {
     
     internal var array: [Int8]
