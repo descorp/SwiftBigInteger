@@ -66,8 +66,9 @@ extension BigInteger {
                 }
                 
                 biggest[n] -= 1
+                biggest[i] = Int8(10 + value)
             } else {
-                biggest[i] = Int8(abs(value))
+                biggest[i] = Int8(value)
             }
             
             i += 1

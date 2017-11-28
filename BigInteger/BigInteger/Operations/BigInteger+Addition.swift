@@ -37,7 +37,16 @@ extension BigInteger {
     }
     
     static internal func add(_ lhs: [Int8], _ rhs: [Int8]) -> [Int8] {
+        if lhs == [] {
+            return rhs
+        }
+        
+        if rhs == [] {
+            return lhs
+        }
+        
         var biggest, smallest : [Int8]
+        
         if lhs.count > rhs.count {
             biggest = lhs
             smallest = rhs
@@ -46,8 +55,7 @@ extension BigInteger {
             smallest = lhs
         }
         
-        var i = 0
-        while i < smallest.count {
+        for i in 0...(smallest.count - 1) {
             let value = biggest[i] + smallest[i]
             biggest[i] =  value % 10
             
@@ -58,7 +66,17 @@ extension BigInteger {
                     biggest.append(1)
                 }
             }
-            i += 1
+        }
+        
+        for i in 0...(biggest.count - 1) {
+            if biggest[i] > 9 {
+                biggest[i] = biggest[i] % 10
+                if biggest.count > i + 1 {
+                    biggest[i + 1] += 1
+                } else {
+                    biggest.append(1)
+                }
+            }
         }
         
         return biggest

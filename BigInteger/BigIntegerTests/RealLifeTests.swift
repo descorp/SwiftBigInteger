@@ -10,7 +10,7 @@ import XCTest
 
 class RealLifeTests: XCTestCase {
     
-    func testchainOperations() {
+    func testChainOperations() {
         var a = BigInteger(value: 100)
         a = a - 1
         XCTAssertEqual(a.description, "99")
@@ -20,6 +20,26 @@ class RealLifeTests: XCTestCase {
         
         a = a * 2
         XCTAssertEqual(a.description, "202")
+
+        a = BigInteger(value: 100000)
+        a = a - 1
+        XCTAssertEqual(a.description, "99999")
+        
+        a = a + 2
+        XCTAssertEqual(a.description, "100001")
+        
+        a = a * 2
+        XCTAssertEqual(a.description, "200002")
+        
+        a = BigInteger(value: 100000000)
+        a = a - 1
+        XCTAssertEqual(a.description, "99999999")
+        
+        a = a + 2
+        XCTAssertEqual(a.description, "100000001")
+        
+        a = a * 2
+        XCTAssertEqual(a.description, "200000002")
     }
     
     func testFibonaccy10() {
