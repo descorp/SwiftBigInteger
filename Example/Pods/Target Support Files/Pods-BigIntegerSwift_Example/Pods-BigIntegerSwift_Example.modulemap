@@ -1,0 +1,6 @@
+framework module Pods_BigIntegerSwift_Example {
+  umbrella header "Pods-BigIntegerSwift_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module BigIntegerSwift {
+  umbrella header "BigIntegerSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
