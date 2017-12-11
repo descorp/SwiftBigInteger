@@ -22,7 +22,7 @@ pod 'BigIntegerSwift'
 
 ## Author
 
-Vladimir Abramichev, vladimirab@backbase.com
+Vladimir Abramichev, vladimir.abramichev@mail.ru
 
 ## License
 
