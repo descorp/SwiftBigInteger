@@ -1,9 +1,10 @@
 # BigIntegerSwift
-[![Swift 3](https://img.shields.io/badge/Swift-3-blue.svg)
+
 [![Build Status](https://travis-ci.org/descorp/SwiftBigInteger.svg?branch=master)](https://travis-ci.org/descorp/SwiftBigInteger)
-[![Version](https://img.shields.io/cocoapods/v/BigIntegerSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntegerSwift)
-[![License](https://img.shields.io/cocoapods/l/BigIntegerSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntegerSwift)
-[![Platform](https://img.shields.io/cocoapods/p/BigIntegerSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntegerSwift)
+[![Swift 3](https://img.shields.io/badge/Swift-3-blue.svg)
+[![Version](https://img.shields.io/cocoapods/v/BigIntSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntSwift)
+[![License](https://img.shields.io/cocoapods/l/BigIntSwift.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/cocoapods/p/BigIntSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntSwift)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 ## Example
