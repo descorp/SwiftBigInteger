@@ -1,22 +1,18 @@
 PODS:
-  - BigIntegerSwift (0.1.0)
+  - BigIntSwift (0.0.1)
   - Nimble (7.0.3)
   - Quick (1.2.0)
 
 DEPENDENCIES:
-  - BigIntegerSwift (from `../`)
+  - BigIntSwift
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
 
-EXTERNAL SOURCES:
-  BigIntegerSwift:
-    :path: ../
-
 SPEC CHECKSUMS:
-  BigIntegerSwift: c749c125028ca211858f01df784f096197d3fae5
+  BigIntSwift: 58ca194fc064d920fe68460e2dcaf081b437cb86
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 7f42f49a91c1e895f98a4dd1ec2ee6b2d616fdd2
+PODFILE CHECKSUM: 8ac530af98974512f1c49115fa6339dec0407f19
 
 COCOAPODS: 1.3.1

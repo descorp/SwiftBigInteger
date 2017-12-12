@@ -1,30 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YYd-X1-edz">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Fibonacci-->
+        <scene sceneID="5hf-cD-RPp">
+            <objects>
+                <viewController id="E7m-eU-nmC" customClass="FibonacciViewController" customModule="BigIntegerSwift_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNj-G0-fZm"/>
+                        <viewControllerLayoutGuide type="bottom" id="o8e-sC-Snx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FKV-Ia-VMN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long description Long description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-Lm-JV1">
+                                <rect key="frame" x="40" y="28" width="240" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V9f-Zz-dbT">
+                                <rect key="frame" x="40" y="99.5" width="156" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB0-IH-NVI">
+                                <rect key="frame" x="216" y="98.5" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dtg-Do-6eQ"/>
+                                </constraints>
+                                <state key="normal" title="Calculate"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="erN-7y-2Y0">
+                                <rect key="frame" x="16" y="160" width="288" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SB0-IH-NVI" firstAttribute="leading" secondItem="V9f-Zz-dbT" secondAttribute="trailing" constant="20" id="0t3-xV-ZqG"/>
+                            <constraint firstItem="o8e-sC-Snx" firstAttribute="top" secondItem="erN-7y-2Y0" secondAttribute="bottom" constant="10" id="9RX-qb-SIg"/>
+                            <constraint firstItem="V9f-Zz-dbT" firstAttribute="top" secondItem="LEe-Lm-JV1" secondAttribute="bottom" constant="30" id="Cqc-lY-xga"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SB0-IH-NVI" secondAttribute="trailing" constant="24" id="DGI-cD-67q"/>
+                            <constraint firstItem="LEe-Lm-JV1" firstAttribute="top" secondItem="dNj-G0-fZm" secondAttribute="bottom" constant="8" id="DxC-ky-tKB"/>
+                            <constraint firstItem="erN-7y-2Y0" firstAttribute="trailing" secondItem="FKV-Ia-VMN" secondAttribute="trailingMargin" id="GPb-go-26L"/>
+                            <constraint firstItem="erN-7y-2Y0" firstAttribute="top" secondItem="V9f-Zz-dbT" secondAttribute="bottom" constant="30" id="GdW-ZX-K7X"/>
+                            <constraint firstItem="SB0-IH-NVI" firstAttribute="baseline" secondItem="V9f-Zz-dbT" secondAttribute="baseline" id="KQ0-mB-IOO"/>
+                            <constraint firstItem="erN-7y-2Y0" firstAttribute="leading" secondItem="FKV-Ia-VMN" secondAttribute="leadingMargin" id="Kyl-cq-XvR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LEe-Lm-JV1" secondAttribute="trailing" constant="24" id="Wbc-dZ-d4o"/>
+                            <constraint firstItem="V9f-Zz-dbT" firstAttribute="leading" secondItem="FKV-Ia-VMN" secondAttribute="leadingMargin" constant="24" id="jb9-dt-JmQ"/>
+                            <constraint firstItem="LEe-Lm-JV1" firstAttribute="leading" secondItem="FKV-Ia-VMN" secondAttribute="leadingMargin" constant="24" id="ula-Ut-tUp"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fibonacci" id="mke-hc-YOm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXH-OX-v3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="-459"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qAR-r9-Ecs">
+            <objects>
+                <tabBarController id="YYd-X1-edz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SvX-Z6-M4y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="E7m-eU-nmC" kind="relationship" relationship="viewControllers" id="CKi-vT-tbo"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="iCH-SB-y1r"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWd-pn-Asl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1364" y="-2"/>
+        </scene>
+        <!--Calculator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BigIntegerSwift_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="CalculatorViewController" customModule="BigIntegerSwift_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsf-yM-sHK">
+                                <rect key="frame" x="40" y="38" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SIK-G0-xjv">
+                                <rect key="frame" x="40" y="78" width="240" height="52"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hox-zM-cjT">
+                                        <rect key="frame" x="0.0" y="11" width="60" height="30"/>
+                                        <state key="normal" title="/"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92U-SL-i4K">
+                                        <rect key="frame" x="60" y="11" width="60" height="30"/>
+                                        <state key="normal" title="*"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-p4-4bZ">
+                                        <rect key="frame" x="120" y="11" width="60" height="30"/>
+                                        <state key="normal" title="-"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBv-UB-UBV">
+                                        <rect key="frame" x="180" y="11" width="60" height="30"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="nkD-YM-hgX"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bz7-6k-cu2">
+                                <rect key="frame" x="40" y="180" width="240" height="241"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOo-jK-sub">
+                                <rect key="frame" x="40" y="140" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SIK-G0-xjv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="5D3-Id-dJm"/>
+                            <constraint firstItem="jsf-yM-sHK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="5YR-lL-Z5o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bz7-6k-cu2" secondAttribute="trailing" constant="24" id="AJl-gn-dNc"/>
+                            <constraint firstItem="bz7-6k-cu2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="GSa-4I-Ubn"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bz7-6k-cu2" secondAttribute="bottom" constant="10" id="I0L-aE-nYs"/>
+                            <constraint firstItem="jsf-yM-sHK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="18" id="MBV-JS-1Zs"/>
+                            <constraint firstItem="bz7-6k-cu2" firstAttribute="top" secondItem="HOo-jK-sub" secondAttribute="bottom" constant="10" id="WIo-kK-H4a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SIK-G0-xjv" secondAttribute="trailing" constant="24" id="WNI-eN-T2R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jsf-yM-sHK" secondAttribute="trailing" constant="24" id="blo-Aq-qBN"/>
+                            <constraint firstItem="SIK-G0-xjv" firstAttribute="top" secondItem="jsf-yM-sHK" secondAttribute="bottom" constant="10" id="d1Y-7W-j1r"/>
+                            <constraint firstItem="HOo-jK-sub" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="d3X-sC-oOD"/>
+                            <constraint firstItem="HOo-jK-sub" firstAttribute="top" secondItem="SIK-G0-xjv" secondAttribute="bottom" constant="10" id="kOO-vB-8KM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HOo-jK-sub" secondAttribute="trailing" constant="24" id="kQH-Vw-Nye"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calculator" id="ows-vk-Q8u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-416" y="409"/>
         </scene>
     </scenes>
 </document>

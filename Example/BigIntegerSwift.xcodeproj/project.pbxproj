@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1721826B440A9B55E870F03B /* Pods_BigIntegerSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E56489ADA296683E4E6E93 /* Pods_BigIntegerSwift_Tests.framework */; };
+		4092A2421FE013C5001C0C71 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4092A2411FE013C5001C0C71 /* CalculatorViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* FibonacciViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* FibonacciViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C4F60233A7DD6F6E25CCE6AA /* Pods_BigIntegerSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDCE2CD6289D0DA218E0BEF /* Pods_BigIntegerSwift_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,21 +31,22 @@
 		287BFE4E16F643FC9968DB68 /* BigIntSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BigIntSwift.podspec; path = ../BigIntSwift.podspec; sourceTree = "<group>"; };
 		29DA6505419EACC20D8317AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3509FCAFE77538558D29395B /* Pods-BigIntegerSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigIntegerSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigIntegerSwift_Example/Pods-BigIntegerSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3E901C98DB48D51F99B7CE21 /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4092A2411FE013C5001C0C71 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BigIntegerSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigIntegerSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* FibonacciViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* BigIntegerSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigIntegerSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		ACDCE2CD6289D0DA218E0BEF /* Pods_BigIntegerSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigIntegerSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EFB6FCF340337225CB0E5F /* Pods-BigIntegerSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigIntegerSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BA44097D830A28BD3B4289BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D0E56489ADA296683E4E6E93 /* Pods_BigIntegerSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigIntegerSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41433CD9DAA59CFB2309B51 /* Pods-BigIntegerSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigIntegerSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BigIntegerSwift_Example/Pods-BigIntegerSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E2DB7A47EAD8B2E1029EE0CC /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4F60233A7DD6F6E25CCE6AA /* Pods_BigIntegerSwift_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1721826B440A9B55E870F03B /* Pods_BigIntegerSwift_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +70,17 @@
 		3C5C9ED3E809EAD099375994 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACDCE2CD6289D0DA218E0BEF /* Pods_BigIntegerSwift_Example.framework */,
-				D0E56489ADA296683E4E6E93 /* Pods_BigIntegerSwift_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4092A2431FE013F1001C0C71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* FibonacciViewController.swift */,
+				4092A2411FE013C5001C0C71 /* CalculatorViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -102,8 +107,8 @@
 		607FACD21AFB9204008FA782 /* Example for BigIntegerSwift */ = {
 			isa = PBXGroup;
 			children = (
+				4092A2431FE013F1001C0C71 /* Views */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -155,6 +160,8 @@
 				3509FCAFE77538558D29395B /* Pods-BigIntegerSwift_Example.release.xcconfig */,
 				2052FC217686BD68895DB1A9 /* Pods-BigIntegerSwift_Tests.debug.xcconfig */,
 				B3EFB6FCF340337225CB0E5F /* Pods-BigIntegerSwift_Tests.release.xcconfig */,
+				E2DB7A47EAD8B2E1029EE0CC /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.debug.xcconfig */,
+				3E901C98DB48D51F99B7CE21 /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -276,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0D5E6EDB071353B7A380C618 /* [CP] Embed Pods Frameworks */ = {
@@ -286,11 +293,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Example/Pods-BigIntegerSwift_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BigIntegerSwift/BigIntegerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/BigIntSwift/BigIntSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigIntegerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigIntSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,7 +315,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BigIntegerSwift_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -354,18 +361,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Tests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigIntSwift/BigIntSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigIntSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests/Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -375,7 +384,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* FibonacciViewController.swift in Sources */,
+				4092A2421FE013C5001C0C71 /* CalculatorViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +559,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2052FC217686BD68895DB1A9 /* Pods-BigIntegerSwift_Tests.debug.xcconfig */;
+			baseConfigurationReference = E2DB7A47EAD8B2E1029EE0CC /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -570,7 +580,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3EFB6FCF340337225CB0E5F /* Pods-BigIntegerSwift_Tests.release.xcconfig */;
+			baseConfigurationReference = 3E901C98DB48D51F99B7CE21 /* Pods-BigIntegerSwift_Example-BigIntegerSwift_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

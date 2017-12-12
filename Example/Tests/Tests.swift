@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import BigIntegerSwift
+import BigIntSwift
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {

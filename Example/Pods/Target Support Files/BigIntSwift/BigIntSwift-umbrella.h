@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "BigInteger.h"
 
-FOUNDATION_EXPORT double Pods_BigIntegerSwift_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BigIntegerSwift_TestsVersionString[];
+FOUNDATION_EXPORT double BigIntSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char BigIntSwiftVersionString[];
 

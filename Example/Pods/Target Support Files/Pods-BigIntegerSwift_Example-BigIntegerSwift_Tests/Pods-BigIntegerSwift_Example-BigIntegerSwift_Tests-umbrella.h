@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double BigIntegerSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char BigIntegerSwiftVersionString[];
+FOUNDATION_EXPORT double Pods_BigIntegerSwift_Example_BigIntegerSwift_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_BigIntegerSwift_Example_BigIntegerSwift_TestsVersionString[];
 
