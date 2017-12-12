@@ -27,16 +27,23 @@ pod 'BigIntSwift'
 
 ### Initialisation
 
-From integer
+From integer primitives
 
 ```swift
-        BigInteger(value: 1234567)
+        let a = BigInteger(value: 1234567)
+        a.sign // true
+```
+
+```swift
+        let a = BigInteger(value: UInt64(12345678901234))
+        a.sign // true
 ```
 
 From string
 
 ```swift
-        BigInteger(value: "-123456789012345678901234567890")
+        let a = BigInteger(value: "-123456789012345678901234567890")
+        a.sign // false
 ```
 
 ### Comparison
@@ -68,6 +75,10 @@ Can perform addiotion with other 'BigInteger' and Integer primitives
         
         a + b           //  0
         b + 42          //  0
+        b + UInt(42)    //  0
+        a += b          //  a = 0
+        b += 42         //  b = 0
+        a += UInt(42)   //  a = 84
 ```
 
 ### Substraction
@@ -80,6 +91,10 @@ Can perform substraction with other 'BigInteger' and Integer primitives
         
         a - b           //  84
         b - 42          // -84
+        b - UInt(42)    // -84
+        a -= b          //  a = 84
+        a -= 42         //  a = -84 
+        a -= UInt(42)   //  a = -84          
 ```
 
 ### Multiplication
@@ -90,8 +105,12 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
         let a = BigInteger(value: 42)
         let b = BigInteger(value: -42)        
         
-        a * b           //  -1764
-        b * (-1)        // 42
+        a * b           // -1764
+        b * (-1)        //  42
+        b * UInt(2)     //  84
+        a *= b          //  a = -1764
+        a *= -1         //  a = -42 
+        a *= UInt(2)    //  a = 84
 ```
 
 ### Division - Todo
