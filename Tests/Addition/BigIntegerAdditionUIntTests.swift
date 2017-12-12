@@ -35,7 +35,7 @@ class BigIntegerAdditionUIntTests: XCTestCase {
     }
     
     func testAddZeroAndMinusOne() {
-        let a = -1
+        let a = BigInteger(value: -1)
         let b : UInt = 0
         
         let result1 = a + b
@@ -54,18 +54,6 @@ class BigIntegerAdditionUIntTests: XCTestCase {
         let result2 = b + a
         XCTAssertEqual(result1, BigInteger(value: 24690))
         XCTAssertEqual(result2, BigInteger(value: 24690))
-        XCTAssertTrue(result1.sign)
-        XCTAssertTrue(result2.sign)
-    }
-    
-    func testAddOposite() {
-        let a = BigInteger(value: -12345)
-        let b : UInt = -12345
-        
-        let result1 = a + b
-        let result2 = b + a
-        XCTAssertEqual(result1, BigInteger())
-        XCTAssertEqual(result2, BigInteger())
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
