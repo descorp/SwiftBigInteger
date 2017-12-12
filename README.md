@@ -12,6 +12,19 @@
 
 Library provides an implementation for Big Integer with basic arithmetics and conveniences. `BigInteger` is a threadsafe immutable struct and implements `Comparable`, `Equatable`, `CustomStringConvertible` and `Hashable` protocols.
 
+## Requirements
+
+Project have no dependencies.
+
+## Installation
+
+BigIntegerSwift is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'BigIntegerSwift'
+```
+
 ### Initialisation
 
 From integer
@@ -90,19 +103,6 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
 ~~To run the example project, clone the repo, and run `pod install` from the Example directory first.~~
 
 You can check tests for more examples like awesome Fibonacci 19400 calculation (this is max that Simulator can handle with recursion depth level) in ~ 5 sec
-
-## Requirements
-
-Project have no dependencies.
-
-## Installation
-
-BigIntegerSwift is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'BigIntegerSwift'
-```
 
 ## Author
 
