@@ -34,13 +34,13 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         let a = -42
         
         XCTAssertTrue(a < b)
+        XCTAssertFalse(-a > b)
         XCTAssertTrue(b > a)
+        XCTAssertFalse(b < -a)
         XCTAssertTrue(a <= b)
-        XCTAssertTrue(a <= -b)
-        XCTAssertTrue(-a <= b)
+        XCTAssertTrue(-a >= b)
         XCTAssertTrue(b >= a)
-        XCTAssertTrue(b >= -a)
-        XCTAssertTrue(-b >= a)
+        XCTAssertTrue(b <= -a)
     }
     
     func testCompareUnsigned() {
@@ -48,11 +48,13 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         let b : UInt = 42
         
         XCTAssertTrue(a < b)
+        XCTAssertFalse(-a > b)
         XCTAssertTrue(b > a)
+        XCTAssertFalse(b < -a)
         XCTAssertTrue(a <= b)
-        XCTAssertTrue(-a <= b)
+        XCTAssertTrue(-a >= b)
         XCTAssertTrue(b >= a)
-        XCTAssertTrue(b >= -a)
+        XCTAssertTrue(b <= -a)
     }
     
     func testNegation() {
