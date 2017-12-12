@@ -25,7 +25,31 @@ extension BigInteger {
         return lhs * BigInteger(value: rhs)
     }
     
+    static func *(lhs: BigInteger, rhs: Int64) -> BigInteger {
+        return lhs * BigInteger(value: rhs)
+    }
+    
+    static func *(lhs: BigInteger, rhs: UInt) -> BigInteger {
+        return lhs * BigInteger(value: rhs)
+    }
+    
+    static func *(lhs: BigInteger, rhs: UInt64) -> BigInteger {
+        return lhs * BigInteger(value: rhs)
+    }
+    
     static func *(lhs: Int, rhs: BigInteger) -> BigInteger {
+        return rhs * BigInteger(value: lhs)
+    }
+    
+    static func *(lhs: Int64, rhs: BigInteger) -> BigInteger {
+        return rhs * BigInteger(value: lhs)
+    }
+    
+    static func *(lhs: UInt, rhs: BigInteger) -> BigInteger {
+        return rhs * BigInteger(value: lhs)
+    }
+    
+    static func *(lhs: UInt64, rhs: BigInteger) -> BigInteger {
         return rhs * BigInteger(value: lhs)
     }
     
@@ -37,8 +61,20 @@ extension BigInteger {
         lhs = lhs * BigInteger(value: rhs)
     }
     
-    static internal func multiply(_ lhs: [Int8], _ rhs: [Int8]) -> [Int8] {
-        var layers: [[Int8]] = []
+    static func *=(lhs: inout BigInteger, rhs: Int64) {
+        lhs = lhs * BigInteger(value: rhs)
+    }
+    
+    static func *=(lhs: inout BigInteger, rhs: UInt) {
+        lhs = lhs * BigInteger(value: rhs)
+    }
+    
+    static func *=(lhs: inout BigInteger, rhs: UInt64) {
+        lhs = lhs * BigInteger(value: rhs)
+    }
+    
+    static internal func multiply(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {
+        var layers: [ContiguousArray<Int8>] = []
         
         for i in lhs.reversed() {
             
@@ -48,7 +84,7 @@ extension BigInteger {
                 n += 1
             }
             
-            var t = [Int8]()
+            var t = ContiguousArray<Int8>()
             for j in 0...(rhs.count-1) {
                 let value = i * rhs[j]
                 if t.count == j {
@@ -76,6 +112,6 @@ extension BigInteger {
             layers.append(t)
         }
         
-        return layers.reduce([Int8]()) { (current, next) in BigInteger.add(current, next) }
+        return layers.reduce(ContiguousArray<Int8>()) { (current, next) in BigInteger.add(current, next) }
     }
 }

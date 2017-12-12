@@ -22,7 +22,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <<T : UnsignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(value: UInt64(rhs))
         return BigInteger.compare(lhs, temp) < 0
     }
     
@@ -33,7 +33,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <=<T : UnsignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(value: UInt64(rhs))
         return BigInteger.compare(lhs, temp) <= 0
     }
     
@@ -44,7 +44,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func >=<T : UnsignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(value: UInt64(rhs))
         return BigInteger.compare(lhs, temp) >= 0
     }
     
@@ -55,7 +55,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func ><T : UnsignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(value: UInt64(rhs))
         return BigInteger.compare(lhs, temp) > 0
     }
     
@@ -70,7 +70,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <<T : UnsignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(value: UInt64(lhs))
         return BigInteger.compare(temp, rhs) < 0
     }
     
@@ -81,7 +81,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func <=<T : UnsignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(value: UInt64(lhs))
         return BigInteger.compare(temp, rhs) <= 0
     }
     
@@ -92,7 +92,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func >=<T : UnsignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(value: UInt64(lhs))
         return BigInteger.compare(temp, rhs) >= 0
     }
     
@@ -103,7 +103,7 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func ><T : UnsignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(value: UInt64(lhs))
         return BigInteger.compare(temp, rhs) > 0
     }
 }

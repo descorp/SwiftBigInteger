@@ -65,7 +65,7 @@ extension BigInteger: Comparable {
             break
         }
         
-        let comparison = Array.compare(lhs.array, rhs.array)
+        let comparison = Array.compare(Array<Int8>(lhs.array), Array<Int8>(rhs.array))
         return lhs.sign ? comparison : -comparison
     }
 }

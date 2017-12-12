@@ -18,7 +18,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func !=<T : SignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
+    static func !=(lhs: Int, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return temp != rhs
+    }
+    
+    static func !=(lhs: Int64, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return temp != rhs
+    }
+    
+    static func !=(lhs: UInt, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return temp != rhs
+    }
+    
+    static func !=(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
         return temp != rhs
     }
@@ -31,42 +46,23 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func !=<T : SignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func !=(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(value: rhs)
         return temp != lhs
     }
     
-    /// Returns a Boolean value indicating whether two values are not equal.
-    ///
-    /// Equality is the inverse of inequality. For any values `a` and `b`,
-    /// `a == b` implies that `a != b` is `false`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    static func !=<T : UnsignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
-        if !rhs.sign {
-            return true
-        }
-        
+    static func !=(lhs: BigInteger, rhs: Int64) -> Bool {
+        let temp = BigInteger(value: rhs)
         return temp != lhs
     }
     
-    /// Returns a Boolean value indicating whether two values are not equal.
-    ///
-    /// Equality is the inverse of inequality. For any values `a` and `b`,
-    /// `a == b` implies that `a != b` is `false`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    static func !=<T : UnsignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func !=(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(value: rhs)
-        if !lhs.sign {
-            return true
-        }
-        
+        return temp != lhs
+    }
+    
+    static func !=(lhs: BigInteger, rhs: UInt64) -> Bool {
+        let temp = BigInteger(value: rhs)
         return temp != lhs
     }
 }
