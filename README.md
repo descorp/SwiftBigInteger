@@ -113,15 +113,16 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
         a *= UInt(2)    //  a = 84
 ```
 
-### Division - Todo
+### Division
 
+Todo
 
+## Example
 
-## Example - Todo
-
+Todo
 ~~To run the example project, clone the repo, and run `pod install` from the Example directory first.~~
 
-You can check tests for more examples like awesome Fibonacci 19400 calculation (this is max that Simulator can handle with recursion depth level) in ~ 5 sec
+You can check tests for more examples like awesome Fibonacci 20000 calculation in ~10 sec (4179 decimals)
 
 ## Author
 
@@ -135,5 +136,3 @@ BigIntegerSwift is available under the MIT license. See the LICENSE file for mor
 
 * Division
 * Optimise storing of values 
-* Increase test coverage
-
