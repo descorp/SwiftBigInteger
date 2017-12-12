@@ -1,5 +1,13 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.2
 xcode_project: BigInteger.xcodeproj
 xcode_scheme: BigInteger
-xcode_sdk: iphonesimulator11.1
+xcode_sdk: iphonesimulator11.2
+
+before_install:
+  - brew update
+  - brew outdated xctool || brew upgrade xctool
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - set -o pipefail && xcodebuild [flags] | xcpretty
+  - xcodebuild -version
+  - xcodebuild -showsdks
