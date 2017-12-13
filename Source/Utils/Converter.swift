@@ -49,16 +49,17 @@ internal func convertFrom(_ text: String) -> ContiguousArray<Int8> {
 }
 
 private func split(_ value: UInt64) -> ContiguousArray<Int8> {
+    if value  < 10 {
+        return [Int8(value)]
+    }
+    
     var result = ContiguousArray<Int8>()
     var temp = value
     
     while temp > 0 {
         let a = temp % 10
-        guard let digit = Int8(exactly: a) else {
-            print("Error")
-            return []
-        }
-
+        let digit = Int8(a)
+        
         result.append(digit)
         temp = temp / 10
     }

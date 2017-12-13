@@ -10,6 +10,15 @@ import XCTest
 
 class BigIntegerAdditionTests: XCTestCase {
     
+    func testPostfixAdd() {
+        var a = BigInteger()
+        let b = BigInteger()
+        
+        a += b
+        XCTAssertEqual(a, BigInteger())
+        XCTAssertTrue(a.sign)
+    }
+    
     func testAddZeroAndZero() {
         let a = BigInteger()
         let b = BigInteger()

@@ -57,10 +57,10 @@ extension BigInteger: Comparable {
     
     static internal func compare(_ lhs: BigInteger, _ rhs: BigInteger) -> Int {
         switch (lhs.sign, rhs.sign) {
-        case let (a, b) where a == b && !a :
-            return BigInteger.compare(-rhs, -lhs)
         case let (a, b) where a != b:
             return a ? 1 : -1
+        case let (a, b) where a == b && !a :
+            return BigInteger.compare(-rhs, -lhs)
         default:
             break
         }

@@ -10,13 +10,6 @@ import Foundation
 
 extension BigInteger {
     
-    // MARK: negation
-    static prefix func -(item: BigInteger) -> BigInteger {
-        var result = item
-        result.sign = !result.sign
-        return result
-    }
-    
     // MARK: power
     static func ^(lhs: BigInteger, rhs: Int) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(abs(rhs)))
@@ -39,7 +32,7 @@ extension BigInteger {
         if(rhs == 1) { return lhs }
         
         var temp = lhs
-        for _ in 1...rhs {
+        for _ in 1...(rhs-1) {
             temp *= lhs
         }
         

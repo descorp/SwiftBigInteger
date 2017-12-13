@@ -8,11 +8,11 @@
 
 import XCTest
 
-class BigIntegerAdditionIntTests: XCTestCase {
+class BigIntegerAdditionInt64Tests: XCTestCase {
     
     func testPostfixAdd() {
         var a = BigInteger(value: 12345)
-        let b = 12345
+        let b: Int64 = 12345
         
         a += b
         XCTAssertEqual(a, BigInteger(value: 24690))
@@ -21,7 +21,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAddZeroAndZero() {
         let a = BigInteger()
-        let b = 0
+        let b: Int64 = 0
         
         let result1 = a + b
         let result2 = b + a
@@ -33,7 +33,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAddZeroAndOne() {
         let a = BigInteger()
-        let b = 1
+        let b: Int64 = 1
         
         let result1 = a + b
         let result2 = b + a
@@ -45,7 +45,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAddZeroAndMinusOne() {
         let a = BigInteger()
-        let b = -1
+        let b: Int64 = -1
         
         let result1 = a + b
         let result2 = b + a
@@ -57,7 +57,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAdd() {
         let a = BigInteger(value: 12345)
-        let b = 12345
+        let b: Int64 = 12345
         
         let result1 = a + b
         let result2 = b + a
@@ -69,7 +69,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAddNegatives() {
         let a = BigInteger(value: -12345)
-        let b = -12345
+        let b: Int64 = -12345
         
         let result1 = a + b
         let result2 = b + a
@@ -81,7 +81,7 @@ class BigIntegerAdditionIntTests: XCTestCase {
     
     func testAddOposite() {
         let a = BigInteger(value: 12345)
-        let b = -12345
+        let b: Int64 = -12345
         
         let result1 = a + b
         let result2 = b + a

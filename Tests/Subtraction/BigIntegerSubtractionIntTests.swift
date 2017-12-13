@@ -11,6 +11,15 @@ import XCTest
 
 class BigIntegerSubtractionIntTests: XCTestCase {
     
+    func testPostfixSubstraction() {
+        var a = BigInteger(value: 12345)
+        let b = 12340
+        
+        a -= b
+        XCTAssertEqual(a, BigInteger(value: 5))
+        XCTAssertTrue(a.sign)
+    }
+    
     func testSubtractZeroAndZero() {
         let a = 0
         let b = BigInteger()

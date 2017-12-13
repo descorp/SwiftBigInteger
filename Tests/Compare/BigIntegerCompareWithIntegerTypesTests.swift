@@ -8,27 +8,7 @@
 
 import XCTest
 
-class BigIntegerCompareWithOtherTypesTests: XCTestCase {
-    
-    func testEquilityUnsigned() {
-        let b = BigInteger(value: 42)
-        let a : UInt = 42
-        
-        XCTAssertTrue(a == b)
-        XCTAssertTrue(b == a)
-        XCTAssertTrue(a != -b)
-        XCTAssertTrue(-b != a)
-    }
-    
-    func testEquilitySigned() {
-        let a = BigInteger(value: 42)
-        let b = -42
-        
-        XCTAssertTrue(a != b)
-        XCTAssertTrue(b != a)
-        XCTAssertTrue(a == -b)
-        XCTAssertTrue(b == -a)
-    }
+class BigIntegerCompareWithIntegerTypesTests: XCTestCase {
     
     func testCompareSigned() {
         let b = BigInteger(value: 42)
@@ -58,16 +38,31 @@ class BigIntegerCompareWithOtherTypesTests: XCTestCase {
         XCTAssertTrue(b <= -a)
     }
     
-    func testNegation() {
-        let a = BigInteger(value: -5)
-        let b = 5
+    func testCompareSigned64() {
+        let b = BigInteger(value: 42)
+        let a: Int64 = -42
         
-        XCTAssertFalse(a.sign)
-        XCTAssertTrue((-a).sign)
+        XCTAssertTrue(a < b)
+        XCTAssertFalse(-a > b)
+        XCTAssertTrue(b > a)
+        XCTAssertFalse(b < -a)
+        XCTAssertTrue(a <= b)
+        XCTAssertTrue(-a >= b)
+        XCTAssertTrue(b >= a)
+        XCTAssertTrue(b <= -a)
+    }
+    
+    func testCompareUnsigned64() {
+        let a = BigInteger(value: -42)
+        let b : UInt64 = 42
         
-        XCTAssertFalse(a == b)
-        XCTAssertTrue(a == -b)
-        XCTAssertTrue(-a == b)
-        XCTAssertFalse(-a == -b)
+        XCTAssertTrue(a < b)
+        XCTAssertFalse(-a > b)
+        XCTAssertTrue(b > a)
+        XCTAssertFalse(b < -a)
+        XCTAssertTrue(a <= b)
+        XCTAssertTrue(-a >= b)
+        XCTAssertTrue(b >= a)
+        XCTAssertTrue(b <= -a)
     }
 }
