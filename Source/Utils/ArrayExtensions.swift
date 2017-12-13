@@ -33,11 +33,11 @@ extension Array where Element: Comparable {
     }
 }
 
-extension Array where Element: BinaryInteger {
+extension ContiguousArray where Element == Int8 {
     
     /// Trim all zeros from the end of array
     /// - Returns: trimmed array
-    internal func trimZeros() -> Array {
+    internal func trimZeros() -> ContiguousArray {
         var temp = self
         while temp.last == 0 && temp.count > 1 {
             temp.remove(at: temp.count-1)

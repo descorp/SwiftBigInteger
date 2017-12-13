@@ -21,7 +21,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <<T : SignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func <(lhs: BigInteger, rhs: Int) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) < 0
+    }
+    
+    static func <(lhs: BigInteger, rhs: Int64) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) < 0
+    }
+    
+    static func <(lhs: BigInteger, rhs: UInt) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) < 0
+    }
+    
+    static func <(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
         return BigInteger.compare(lhs, temp) < 0
     }
@@ -32,7 +47,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <=<T : SignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func <=(lhs: BigInteger, rhs: Int) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) <= 0
+    }
+    
+    static func <=(lhs: BigInteger, rhs: Int64) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) <= 0
+    }
+    
+    static func <=(lhs: BigInteger, rhs: UInt) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) <= 0
+    }
+    
+    static func <=(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
         return BigInteger.compare(lhs, temp) <= 0
     }
@@ -43,7 +73,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func >=<T : SignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func >=(lhs: BigInteger, rhs: Int) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) >= 0
+    }
+    
+    static func >=(lhs: BigInteger, rhs: Int64) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) >= 0
+    }
+    
+    static func >=(lhs: BigInteger, rhs: UInt) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) >= 0
+    }
+    
+    static func >=(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
         return BigInteger.compare(lhs, temp) >= 0
     }
@@ -54,7 +99,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ><T : SignedInteger>(lhs: BigInteger, rhs: T) -> Bool {
+    static func >(lhs: BigInteger, rhs: Int) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) > 0
+    }
+    
+    static func >(lhs: BigInteger, rhs: Int64) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) > 0
+    }
+    
+    static func >(lhs: BigInteger, rhs: UInt) -> Bool {
+        let temp = BigInteger(value: rhs)
+        return BigInteger.compare(lhs, temp) > 0
+    }
+    
+    static func >(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
         return BigInteger.compare(lhs, temp) > 0
     }
@@ -69,7 +129,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <<T : SignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
+    static func <(lhs: Int, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) < 0
+    }
+    
+    static func <(lhs: Int64, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) < 0
+    }
+    
+    static func <(lhs: UInt, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) < 0
+    }
+    
+    static func <(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
         return BigInteger.compare(temp, rhs) < 0
     }
@@ -80,7 +155,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <=<T : SignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
+    static func <=(lhs: Int, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) <= 0
+    }
+    
+    static func <=(lhs: Int64, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) <= 0
+    }
+    
+    static func <=(lhs: UInt, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) <= 0
+    }
+    
+    static func <=(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
         return BigInteger.compare(temp, rhs) <= 0
     }
@@ -91,7 +181,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func >=<T : SignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
+    static func >=(lhs: Int, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) >= 0
+    }
+    
+    static func >=(lhs: Int64, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) >= 0
+    }
+    
+    static func >=(lhs: UInt, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) >= 0
+    }
+    
+    static func >=(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
         return BigInteger.compare(temp, rhs) >= 0
     }
@@ -102,7 +207,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ><T : SignedInteger>(lhs: T, rhs: BigInteger) -> Bool {
+    static func >(lhs: Int, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) > 0
+    }
+    
+    static func >(lhs: Int64, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) > 0
+    }
+    
+    static func >(lhs: UInt, rhs: BigInteger) -> Bool {
+        let temp = BigInteger(value: lhs)
+        return BigInteger.compare(temp, rhs) > 0
+    }
+    
+    static func >(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
         return BigInteger.compare(temp, rhs) > 0
     }

@@ -20,7 +20,7 @@ class ConvertersTests: XCTestCase {
     }
     
     func testSplitOnDigitsLong() {
-            XCTAssertEqual(splitOnDigitsAndReverse(UInt64.init(1234567890987654.0)), [4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1])
+            XCTAssertEqual(splitOnDigitsAndReverse(UInt64(1234567890987654.0)), [4,5,6,7,8,9,0,9,8,7,6,5,4,3,2,1])
     }
     
     func testConvertFrom() {
@@ -29,7 +29,7 @@ class ConvertersTests: XCTestCase {
     
     func testConvertFromLong() {
         var str = ""
-        var result: [Int8] = []
+        var result: ContiguousArray<Int8> = []
         for _ in 0...200 {
             let i = Int8(arc4random() % 10)
             str += String(i)
@@ -40,7 +40,7 @@ class ConvertersTests: XCTestCase {
     }
     
     func testArrayTrim() {
-        XCTAssertEqual([1,2,3].trimZeros(), [1,2,3])
-        XCTAssertEqual([1,2,3,0,0,0].trimZeros(), [1,2,3])
+        XCTAssertEqual(ContiguousArray<Int8>([1,2,3]).trimZeros(), [1,2,3])
+        XCTAssertEqual(ContiguousArray<Int8>([1,2,3,0,0,0]).trimZeros(), [1,2,3])
     }
 }

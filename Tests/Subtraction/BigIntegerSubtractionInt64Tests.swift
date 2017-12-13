@@ -1,19 +1,18 @@
 //
-//  BigIntegerSubtractionIntTests.swift
-//  BigIntegerTests
+//  BigIntegerSubtractionInt64Tests.swift
+//  BigInteger
 //
-//  Created by Vladimir Abramichev on 28/11/2017.
+//  Created by Vladimir Abramichev on 13/12/2017.
 //  Copyright © 2017 Vladimir Abramichev. All rights reserved.
 //
 
 import XCTest
 
-
-class BigIntegerSubtractionIntTests: XCTestCase {
+class BigIntegerSubtractionInt64Tests: XCTestCase {
     
     func testPostfixSubstraction() {
         var a = BigInteger(value: 12345)
-        let b = 12340
+        let b: Int64 = 12340
         
         a -= b
         XCTAssertEqual(a, BigInteger(value: 5))
@@ -21,7 +20,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractZeroAndZero() {
-        let a = 0
+        let a: Int64 = 0
         let b = BigInteger()
         
         let result1 = a - b
@@ -33,7 +32,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractZeroAndMinusOne() {
-        let a = 0
+        let a: Int64 = 0
         let b = BigInteger(value: -1)
         
         let result1 = a - b
@@ -45,7 +44,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractZeroAndOne() {
-        let a = 0
+        let a: Int64 = 0
         let b = BigInteger(value: 1)
         
         let result1 = a - b
@@ -57,7 +56,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractOposite() {
-        let a = 12345
+        let a: Int64 = 12345
         let b = BigInteger(value: -12345)
         
         let result1 = a - b
@@ -69,7 +68,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractEquilNegatives() {
-        let a = -12345
+        let a: Int64 = -12345
         let b = BigInteger(value: -12345)
         
         let result1 = a - b
@@ -81,7 +80,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractEquil() {
-        let a = 12345
+        let a: Int64 = 12345
         let b = BigInteger(value: 12345)
         
         let result1 = a - b
@@ -93,7 +92,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractAisBiggerThanB() {
-        let a = 12345
+        let a: Int64 = 12345
         let b = BigInteger(value: 12340)
         
         let result1 = a - b
@@ -105,7 +104,7 @@ class BigIntegerSubtractionIntTests: XCTestCase {
     }
     
     func testSubtractBisBiggerThanA() {
-        let a = 12340
+        let a: Int64 = 12340
         let b = BigInteger(value: 12345)
         
         let result1 = a - b
@@ -116,3 +115,4 @@ class BigIntegerSubtractionIntTests: XCTestCase {
         XCTAssertTrue(result2.sign)
     }
 }
+
