@@ -44,4 +44,25 @@ class BigIntegerMathPowerTests: XCTestCase {
         let result = a^3
         XCTAssertEqual(result.description, "-8")
     }
+    
+    func testPowerNegativeEvenUInt() {
+        let a = BigInteger(value: -2)
+        
+        let result = a^UInt(2)
+        XCTAssertEqual(result.description, "4")
+    }
+    
+    func testPowerNegativeEvenUInt64() {
+        let a = BigInteger(value: -2)
+        
+        let result = a^UInt64(2)
+        XCTAssertEqual(result.description, "4")
+    }
+    
+    func testPowerNegativeEvenInt64() {
+        let a = BigInteger(value: -2)
+        
+        let result = a^Int64(2)
+        XCTAssertEqual(result.description, "4")
+    }
 }
