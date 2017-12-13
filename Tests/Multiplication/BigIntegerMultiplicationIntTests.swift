@@ -10,6 +10,15 @@ import XCTest
 
 class BigIntegerMultiplicationIntTests: XCTestCase {
     
+    func testPostfixMultiply() {
+        var a = BigInteger(value: 123456)
+        let b = 123456
+        a *= b
+        
+        XCTAssertEqual(a, BigInteger(value: 15241383936))
+        XCTAssertTrue(a.sign)
+    }
+    
     func testMultiplyByZero() {
         let a = BigInteger()
         let b = 123456

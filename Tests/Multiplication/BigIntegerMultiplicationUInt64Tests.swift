@@ -1,27 +1,27 @@
 //
-//  BigIntegerMultiplicationUIntTests.swift
-//  BigInteger
+//  BigIntegerMultiplicationUInt64Tests.swift
+//  BigIntegerTests
 //
-//  Created by Vladimir Abramichev on 12/12/2017.
+//  Created by Vladimir Abramichev on 13/12/2017.
 //  Copyright © 2017 Vladimir Abramichev. All rights reserved.
 //
 
 import XCTest
 
-class BigIntegerMultiplicationUIntTests: XCTestCase {
+class BigIntegerMultiplicationUInt64Tests: XCTestCase {
     
     func testPostfixMultiply() {
         var a = BigInteger(value: 123456)
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         a *= b
-        
+
         XCTAssertEqual(a, BigInteger(value: 15241383936))
         XCTAssertTrue(a.sign)
     }
     
     func testMultiplyByZero() {
         let a = BigInteger()
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         let result1 = a * b
         let result2 = b * a
         XCTAssertEqual(result1, BigInteger())
@@ -32,7 +32,7 @@ class BigIntegerMultiplicationUIntTests: XCTestCase {
     
     func testMultiplyByOne() {
         let a = BigInteger(value: 1)
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         let result1 = a * b
         let result2 = b * a
         XCTAssertEqual(result1, BigInteger(value: 123456))
@@ -43,7 +43,7 @@ class BigIntegerMultiplicationUIntTests: XCTestCase {
     
     func testMultiplyByNegativeOne() {
         let a = BigInteger(value: -1)
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         let result1 = a * b
         let result2 = b * a
         XCTAssertEqual(result1, BigInteger(value: -123456))
@@ -54,7 +54,7 @@ class BigIntegerMultiplicationUIntTests: XCTestCase {
     
     func testMultiply() {
         let a = BigInteger(value: 123456)
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         let result1 = a * b
         let result2 = b * a
         XCTAssertEqual(result1, BigInteger(value: 15241383936))
@@ -65,7 +65,7 @@ class BigIntegerMultiplicationUIntTests: XCTestCase {
     
     func testMultiplyNegative() {
         let a = BigInteger(value: -123456)
-        let b : UInt = 123456
+        let b : UInt64 = 123456
         let result1 = a * b
         let result2 = b * a
         XCTAssertEqual(result1, BigInteger(value: -15241383936))
