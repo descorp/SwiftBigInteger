@@ -57,9 +57,7 @@ private func split(_ value: UInt64) -> ContiguousArray<Int8> {
     var temp = value
     
     while temp > 0 {
-        let a = temp % 10
-        let digit = Int8(a)
-        
+        let digit = Int8(temp % 10)        
         result.append(digit)
         temp = temp / 10
     }
