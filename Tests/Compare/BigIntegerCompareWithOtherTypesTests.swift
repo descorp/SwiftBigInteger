@@ -11,12 +11,13 @@ import XCTest
 class BigIntegerCompareWithOtherTypesTests: XCTestCase {
     
     func testEquilityUnsigned() {
-        let b = BigInteger(value: -42)
+        let b = BigInteger(value: 42)
         let a : UInt = 42
         
-        XCTAssertTrue(a != b)
-        XCTAssertTrue(b != a)
-        XCTAssertTrue(a == -b)
+        XCTAssertTrue(a == b)
+        XCTAssertTrue(b == a)
+        XCTAssertTrue(a != -b)
+        XCTAssertTrue(-b != a)
     }
     
     func testEquilitySigned() {
