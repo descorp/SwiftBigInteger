@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BigIntegerCompareBasicValuesTests {
+class BigIntegerCompareBasicValuesTests : XCTestCase {
     
     func testZero() {
         let a = BigInteger.zero
@@ -36,13 +36,16 @@ class BigIntegerCompareBasicValuesTests {
         XCTAssertFalse(b > a)
         XCTAssertFalse(a > -b)
         XCTAssertFalse(-b < a)
-
+        
         XCTAssertFalse(a < 10)
         XCTAssertFalse(10 > a)
         XCTAssertFalse(a > -10)
         XCTAssertFalse(-10 < a)
         
         XCTAssertFalse(a == a)
+        
+        XCTAssertTrue(a.isNaN)
+        XCTAssertFalse(b.isNaN)
     }
     
     func testInfinity() {
@@ -59,9 +62,13 @@ class BigIntegerCompareBasicValuesTests {
         XCTAssertFalse(a > -10)
         XCTAssertFalse(-10 < a)
         
-        XCTAssertTrue(BigInteger.infinit > BigInteger.zero)
         XCTAssertFalse(BigInteger.infinit > BigInteger.infinit)
         XCTAssertFalse(BigInteger.infinit < BigInteger.infinit)
         XCTAssertTrue(BigInteger.infinit == BigInteger.infinit)
+        
+        XCTAssertFalse(BigInteger.infinit > -BigInteger.infinit)
+        XCTAssertFalse(-BigInteger.infinit < BigInteger.infinit)
+        XCTAssertTrue(BigInteger.infinit != -BigInteger.infinit)
     }
 }
+
