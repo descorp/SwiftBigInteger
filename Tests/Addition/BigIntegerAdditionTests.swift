@@ -10,6 +10,15 @@ import XCTest
 
 class BigIntegerAdditionTests: XCTestCase {
     
+    func testPostfixAdd() {
+        var a = BigInteger()
+        let b = BigInteger()
+        
+        a += b
+        XCTAssertEqual(a, BigInteger())
+        XCTAssertTrue(a.sign)
+    }
+    
     func testAddZeroAndZero() {
         let a = BigInteger()
         let b = BigInteger()
@@ -64,61 +73,3 @@ class BigIntegerAdditionTests: XCTestCase {
         XCTAssertTrue(result.sign)
     }
 }
-
-class BigIntegerAdditionIntTests: XCTestCase {
-    
-    func testAddZeroAndZero() {
-        let a = BigInteger()
-        let b = 0
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger())
-        XCTAssertTrue(result.sign)
-    }
-    
-    func testAddZeroAndOne() {
-        let a = BigInteger()
-        let b = 1
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger(value: 1))
-        XCTAssertTrue(result.sign)
-    }
-    
-    func testAddZeroAndMinusOne() {
-        let a = BigInteger()
-        let b = -1
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger(value: -1))
-        XCTAssertFalse(result.sign)
-    }
-    
-    func testAdd() {
-        let a = BigInteger(value: 12345)
-        let b = 12345
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger(value: 24690))
-        XCTAssertTrue(result.sign)
-    }
-    
-    func testAddNegatives() {
-        let a = BigInteger(value: -12345)
-        let b = -12345
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger(value: -24690))
-        XCTAssertFalse(result.sign)
-    }
-    
-    func testAddOposite() {
-        let a = BigInteger(value: 12345)
-        let b = -12345
-        
-        let result = a + b
-        XCTAssertEqual(result, BigInteger())
-        XCTAssertTrue(result.sign)
-    }
-}
-

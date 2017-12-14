@@ -62,7 +62,9 @@ class BigIntegerTests: XCTestCase {
         let a = BigInteger(value: str)
         
         XCTAssertNotNil(a)
-        XCTAssertEqual(a!.description, result.toString())
+        guard let actual = a else { return }
+        
+        XCTAssertEqual(actual.description, result.toString())
     }
     
     func testInitWithLongNegativeString() {

@@ -11,7 +11,7 @@ import Foundation
 /// Implementation of Big integer value.
 struct BigInteger {
     
-    internal var array: [Int8]
+    internal var array: ContiguousArray<Int8>
     var sign: Bool
     
     /// Constructor for Big Integer - creating 'zero' Big integer.
@@ -21,15 +21,29 @@ struct BigInteger {
     }
     
     /// Constructor for Big Integer - converts unsigned integer into Big integer.
-    /// - Parameter value: value of UInt, UInt32, UInt64, UInt16, UInt8
-    init<T: UnsignedInteger>(value: T) {
+    /// - Parameter value: UInt
+    init(value: UInt) {
+        sign = true
+        array = splitOnDigitsAndReverse(value)
+    }
+    
+    /// Constructor for Big Integer - converts unsigned integer into Big integer.
+    /// - Parameter value: value UInt64
+    init(value: UInt64) {
         sign = true
         array = splitOnDigitsAndReverse(value)
     }
     
     /// Constructor for Big Integer - converts signed integer into Big integer.
-    /// - Parameter value: value of Int, Int32, Int64, Int16, Int8
-    init<T: SignedInteger>(value: T) {
+    /// - Parameter value: value of Int
+    init(value: Int) {
+        sign = value >= 0
+        array = splitOnDigitsAndReverse(value)
+    }
+    
+    /// Constructor for Big Integer - converts signed integer into Big integer.
+    /// - Parameter value: value of Int64
+    init(value: Int64) {
         sign = value >= 0
         array = splitOnDigitsAndReverse(value)
     }
@@ -46,10 +60,10 @@ struct BigInteger {
             sign = true
         }
         
-        array = convertFrom(temp).reversed()
+        array = ContiguousArray<Int8>(convertFrom(temp).reversed())
     }
     
-    internal init(raw array: [Int8], sign: Bool) {
+    internal init(raw array: ContiguousArray<Int8>, sign: Bool) {
         self.array = array.trimZeros()
         self.sign = sign
     }

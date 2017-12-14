@@ -18,7 +18,7 @@ extension BigInteger {
                 return BigInteger()
             }
             
-            let comparisom = Array.compare(lhs.array, rhs.array)
+            let comparisom = Array.compare(Array<Int8>(lhs.array), Array<Int8>(rhs.array))
             return BigInteger(raw: value, sign: comparisom > 0 ? lhs.sign : !lhs.sign)
         }
         
@@ -29,7 +29,31 @@ extension BigInteger {
         return lhs - BigInteger(value: rhs)
     }
     
+    static func -(lhs: BigInteger, rhs: Int64) -> BigInteger {
+        return lhs - BigInteger(value: rhs)
+    }
+    
+    static func -(lhs: BigInteger, rhs: UInt) -> BigInteger {
+        return lhs - BigInteger(value: rhs)
+    }
+    
+    static func -(lhs: BigInteger, rhs: UInt64) -> BigInteger {
+        return lhs - BigInteger(value: rhs)
+    }
+    
     static func -(lhs: Int, rhs: BigInteger) -> BigInteger {
+        return BigInteger(value: lhs) - rhs
+    }
+    
+    static func -(lhs: Int64, rhs: BigInteger) -> BigInteger {
+        return BigInteger(value: lhs) - rhs
+    }
+    
+    static func -(lhs: UInt, rhs: BigInteger) -> BigInteger {
+        return BigInteger(value: lhs) - rhs
+    }
+    
+    static func -(lhs: UInt64, rhs: BigInteger) -> BigInteger {
         return BigInteger(value: lhs) - rhs
     }
     
@@ -41,10 +65,22 @@ extension BigInteger {
         lhs = lhs - BigInteger(value: rhs)
     }
     
-    static internal func subtract(_ lhs: [Int8], _ rhs: [Int8]) -> [Int8] {
-        var biggest, smallest : [Int8]
+    static func -=(lhs: inout BigInteger, rhs: Int64) {
+        lhs = lhs - BigInteger(value: rhs)
+    }
+    
+    static func -=(lhs: inout BigInteger, rhs: UInt) {
+        lhs = lhs - BigInteger(value: rhs)
+    }
+    
+    static func -=(lhs: inout BigInteger, rhs: UInt64) {
+        lhs = lhs - BigInteger(value: rhs)
+    }
+    
+    static internal func subtract(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {
+        var biggest, smallest : ContiguousArray<Int8>
         
-        let compare = Array.compare(lhs, rhs)
+        let compare = Array.compare(Array<Int8>(lhs), Array<Int8>(rhs))
         if compare > 0 {
             biggest = lhs
             smallest = rhs
