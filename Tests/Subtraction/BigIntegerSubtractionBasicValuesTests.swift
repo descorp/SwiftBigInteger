@@ -41,7 +41,7 @@ class BigIntegerSubtractionBasicValuesTests: XCTestCase {
         XCTAssertFalse((b - a).sign)
         XCTAssertTrue((a - 10).isInfinit)
         XCTAssertTrue((a - 10).sign)
-        XCTAssertTrue((10 - b).isInfinit)
+        XCTAssertTrue((10 - a).isInfinit)
         XCTAssertFalse((10 - a).sign)
         XCTAssertTrue((BigInteger.infinit - a).isNaN)
     }
