@@ -11,52 +11,60 @@ import XCTest
 class BigIntegerEquilityBasicValues: XCTestCase {
     
     func testZero() {
-        let a = BigInteger.zero
-        let b = BigInteger(value: 10)
+        let zero = BigInteger.zero
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertTrue(a == BigInteger())
-        XCTAssertTrue(a == BigInteger(value: 0))
-        XCTAssertTrue(a == 0)
+        XCTAssertTrue(zero == BigInteger())
+        XCTAssertTrue(zero == BigInteger(value: 0))
+        XCTAssertTrue(zero == 0)
+        XCTAssertTrue(zero.sign)
+        
+        XCTAssertTrue(zero != someBigInt)
+        XCTAssertTrue(zero != 10)
     }
     
     func testNan() {
-        let a = BigInteger.nan
-        let b = BigInteger(value: 10)
+        let nan = BigInteger.nan
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertFalse(a == a)
-        XCTAssertFalse(a == -a)
-        XCTAssertFalse(-a == a)
-        XCTAssertFalse(a == b)
-        XCTAssertFalse(b == a)
-        XCTAssertFalse(a == 10)
-        XCTAssertFalse(10 == a)
+        XCTAssertFalse(nan == nan)
+        XCTAssertFalse(nan == -nan)
+        XCTAssertFalse(-nan == nan)
+        XCTAssertTrue(nan != nan)
+        XCTAssertTrue(nan != -nan)
+        XCTAssertTrue(-nan != nan)
         
-        XCTAssertTrue(a != a)
-        XCTAssertTrue(a != -a)
-        XCTAssertTrue(-a != a)
-        XCTAssertFalse(a != b)
-        XCTAssertFalse(b != a)
-        XCTAssertFalse(a != 10)
-        XCTAssertFalse(10 != a)
+        XCTAssertFalse(nan == someBigInt)
+        XCTAssertFalse(nan != someBigInt)
+        XCTAssertFalse(someBigInt == nan)
+        XCTAssertFalse(someBigInt != nan)
         
-        XCTAssertTrue(a.isNaN)
-        XCTAssertFalse(b.isNaN)
+        XCTAssertFalse(nan == 10)
+        XCTAssertFalse(10 == nan)
+        XCTAssertFalse(nan != 10)
+        XCTAssertFalse(10 != nan)
+        
+        XCTAssertTrue(nan.isNaN)
+        XCTAssertFalse(someBigInt.isNaN)
     }
     
     func testInfinity() {
-        let a = BigInteger.infinit
-        let b = BigInteger(value: 10)
-        let c = -BigInteger.infinit
+        let inf = BigInteger.infinit
+        let someBigInt = BigInteger(value: 10)
+        let negativeInf = -BigInteger.infinit
         
-        XCTAssertTrue(a == a)
-        XCTAssertTrue(a != c)
-        XCTAssertTrue(c != a)
-        XCTAssertFalse(a == b)
-        XCTAssertFalse(b == a)
-        XCTAssertFalse(a == 10)
-        XCTAssertFalse(10 == a)
+        XCTAssertTrue(inf == inf)
+        XCTAssertTrue(negativeInf == negativeInf)
         
-        XCTAssertTrue(BigInteger.infinit == BigInteger.infinit)
-        XCTAssertTrue(BigInteger.infinit != -BigInteger.infinit)
+        XCTAssertFalse(inf != inf)
+        XCTAssertFalse(negativeInf != negativeInf)
+        
+        XCTAssertTrue(inf != negativeInf)
+        XCTAssertTrue(negativeInf != inf)
+        
+        XCTAssertFalse(inf == someBigInt)
+        XCTAssertFalse(someBigInt == inf)
+        XCTAssertFalse(inf == 10)
+        XCTAssertFalse(10 == inf)
     }
 }

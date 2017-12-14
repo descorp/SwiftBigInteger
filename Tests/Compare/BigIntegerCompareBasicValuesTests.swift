@@ -11,84 +11,69 @@ import XCTest
 class BigIntegerCompareBasicValuesTests : XCTestCase {
     
     func testZero() {
-        let a = BigInteger.zero
-        let b = BigInteger(value: 10)
+        let zero = BigInteger.zero
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertTrue(a < b)
-        XCTAssertTrue(b > a)
-        XCTAssertTrue(a > -b)
-        XCTAssertTrue(-b < a)
-        XCTAssertTrue(a == BigInteger())
-        XCTAssertTrue(a == BigInteger(value: 0))
+        XCTAssertTrue(zero < someBigInt)
+        XCTAssertTrue(someBigInt > zero)
+        XCTAssertTrue(zero > -someBigInt)
+        XCTAssertTrue(-someBigInt < zero)
         
-        XCTAssertTrue(a < 10)
-        XCTAssertTrue(10 > a)
-        XCTAssertTrue(a > -10)
-        XCTAssertTrue(-10 < a)
-        XCTAssertTrue(a == 0)
+        XCTAssertTrue(zero < 10)
+        XCTAssertTrue(10 > zero)
+        XCTAssertTrue(zero > -10)
+        XCTAssertTrue(-10 < zero)
+        XCTAssertTrue(zero == 0)
     }
     
     func testNan() {
-        let a = BigInteger.nan
-        let b = BigInteger(value: 10)
+        let nan = BigInteger.nan
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertFalse(a < b)
-        XCTAssertFalse(b > a)
-        XCTAssertFalse(a > -b)
-        XCTAssertFalse(-b < a)
+        XCTAssertFalse(nan < someBigInt)
+        XCTAssertFalse(someBigInt > nan)
+        XCTAssertFalse(nan > -someBigInt)
+        XCTAssertFalse(-someBigInt < nan)
+        XCTAssertFalse(-nan < someBigInt)
+        XCTAssertFalse(someBigInt > -nan)
+        XCTAssertFalse(-nan > -someBigInt)
+        XCTAssertFalse(-someBigInt < -nan)
         
-        XCTAssertFalse(a < 10)
-        XCTAssertFalse(10 > a)
-        XCTAssertFalse(a > -10)
-        XCTAssertFalse(-10 < a)
-        
-        XCTAssertFalse(a == a)
-        XCTAssertFalse(a == -a)
-        XCTAssertFalse(-a == a)
-        XCTAssertFalse(a == b)
-        XCTAssertFalse(b == a)
-        XCTAssertFalse(a == 10)
-        XCTAssertFalse(10 == a)
-        
-        XCTAssertTrue(a.isNaN)
-        XCTAssertFalse(b.isNaN)
+        XCTAssertFalse(nan < 10)
+        XCTAssertFalse(10 > nan)
+        XCTAssertFalse(nan > -10)
+        XCTAssertFalse(-10 < nan)
+        XCTAssertFalse(-nan < 10)
+        XCTAssertFalse(10 > -nan)
+        XCTAssertFalse(nan > -10)
+        XCTAssertFalse(-10 < -nan)
     }
     
     func testInfinity() {
-        let a = BigInteger.infinit
-        let b = BigInteger(value: 10)
-        let c = -BigInteger.infinit
+        let inf = BigInteger.infinit
+        let someBigInt = BigInteger(value: 10)
+        let negativeInf = -BigInteger.infinit
         
-        XCTAssertTrue(a > b)
-        XCTAssertTrue(b < a)
-        XCTAssertTrue(a > -b)
-        XCTAssertTrue(-b < a)
+        XCTAssertTrue(inf > someBigInt)
+        XCTAssertTrue(someBigInt < inf)
+        XCTAssertTrue(inf > -someBigInt)
+        XCTAssertTrue(-someBigInt < inf)
         
-        XCTAssertTrue(a > 10)
-        XCTAssertTrue(10 < a)
-        XCTAssertTrue(a > -10)
-        XCTAssertTrue(-10 < a)
+        XCTAssertTrue(inf > 10)
+        XCTAssertTrue(10 < inf)
+        XCTAssertTrue(inf > -10)
+        XCTAssertTrue(-10 < inf)
+
+        XCTAssertTrue(negativeInf < someBigInt)
+        XCTAssertTrue(someBigInt > negativeInf)
+        XCTAssertTrue(negativeInf < -someBigInt)
+        XCTAssertTrue(-someBigInt > negativeInf)
         
-        XCTAssertTrue(a == a)
-        XCTAssertFalse(a == -a)
-        XCTAssertFalse(-a == a)
-        XCTAssertFalse(a == b)
-        XCTAssertFalse(b == a)
-        XCTAssertFalse(a == 10)
-        XCTAssertFalse(10 == a)
+        XCTAssertFalse(inf > inf)
+        XCTAssertFalse(inf < inf)
         
-        XCTAssertTrue(c < b)
-        XCTAssertTrue(b > c)
-        XCTAssertTrue(c < -b)
-        XCTAssertTrue(-b > c)
-        
-        XCTAssertFalse(BigInteger.infinit > BigInteger.infinit)
-        XCTAssertFalse(BigInteger.infinit < BigInteger.infinit)
-        XCTAssertTrue(BigInteger.infinit == BigInteger.infinit)
-        
-        XCTAssertTrue(BigInteger.infinit > -BigInteger.infinit)
-        XCTAssertTrue(-BigInteger.infinit < BigInteger.infinit)
-        XCTAssertTrue(BigInteger.infinit != -BigInteger.infinit)
+        XCTAssertTrue(inf > negativeInf)
+        XCTAssertTrue(negativeInf < inf)
     }
 }
 
