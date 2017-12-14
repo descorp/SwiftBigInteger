@@ -35,10 +35,14 @@ class BigIntegerSubtractionBasicValuesTests: XCTestCase {
         let a = BigInteger.infinit
         let b = BigInteger(value: 10)
         
-        XCTAssertEqual(a - b, BigInteger.infinit)
-        XCTAssertEqual(b - a, -BigInteger.infinit)
-        XCTAssertEqual(a - 10, BigInteger.infinit)
-        XCTAssertEqual(10 - a, -BigInteger.infinit)
+        XCTAssertTrue((a - b).isInfinit)
+        XCTAssertTrue((a - b).sign)
+        XCTAssertTrue((b - a).isInfinit)
+        XCTAssertFalse((b - a).sign)
+        XCTAssertTrue((a - 10).isInfinit)
+        XCTAssertTrue((a - 10).sign)
+        XCTAssertTrue((10 - b).isInfinit)
+        XCTAssertFalse((10 - a).sign)
         XCTAssertTrue((BigInteger.infinit - a).isNaN)
     }
 }

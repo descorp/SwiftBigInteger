@@ -35,9 +35,9 @@ class BigIntegerMulticlicationBasicValuesTests: XCTestCase {
         let a = BigInteger.infinit
         let b = BigInteger(value: 10)
         
-        XCTAssertEqual(a * b, BigInteger.infinit)
-        XCTAssertEqual(b * a, BigInteger.infinit)
-        XCTAssertEqual(a * 10, BigInteger.infinit)
-        XCTAssertEqual(10 * a, BigInteger.infinit)
+        XCTAssertTrue((a * b).isInfinit)
+        XCTAssertTrue((b * a).isInfinit)
+        XCTAssertTrue((a * 10).isInfinit)
+        XCTAssertTrue((10 * a).isInfinit)
     }
 }

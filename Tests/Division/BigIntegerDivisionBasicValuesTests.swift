@@ -34,9 +34,9 @@ class BigIntegerDivisionBasicValuesTests: XCTestCase {
         let a = BigInteger.infinit
         let b = BigInteger(value: 10)
         
-        XCTAssertEqual(a / b, BigInteger.infinit)
+        XCTAssertTrue((a / b).isInfinit)
         XCTAssertEqual(b / a, BigInteger.zero)
-        XCTAssertEqual(a / 10, BigInteger.infinit)
+        XCTAssertTrue((a / 10).isInfinit)
         XCTAssertEqual(10 / a, BigInteger.zero)
         XCTAssertTrue((BigInteger.infinit / a).isNaN)
     }
