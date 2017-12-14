@@ -43,6 +43,12 @@ class BigIntegerCompareBasicValuesTests : XCTestCase {
         XCTAssertFalse(-10 < a)
         
         XCTAssertFalse(a == a)
+        XCTAssertFalse(a == -a)
+        XCTAssertFalse(-a == a)
+        XCTAssertFalse(a == b)
+        XCTAssertFalse(b == a)
+        XCTAssertFalse(a == 10)
+        XCTAssertFalse(10 == a)
         
         XCTAssertTrue(a.isNaN)
         XCTAssertFalse(b.isNaN)
@@ -51,23 +57,37 @@ class BigIntegerCompareBasicValuesTests : XCTestCase {
     func testInfinity() {
         let a = BigInteger.infinit
         let b = BigInteger(value: 10)
+        let c = -BigInteger.infinit
         
-        XCTAssertFalse(a > b)
-        XCTAssertFalse(b < a)
-        XCTAssertFalse(a > -b)
-        XCTAssertFalse(-b < a)
+        XCTAssertTrue(a > b)
+        XCTAssertTrue(b < a)
+        XCTAssertTrue(a > -b)
+        XCTAssertTrue(-b < a)
         
-        XCTAssertFalse(a > 10)
-        XCTAssertFalse(10 < a)
-        XCTAssertFalse(a > -10)
-        XCTAssertFalse(-10 < a)
+        XCTAssertTrue(a > 10)
+        XCTAssertTrue(10 < a)
+        XCTAssertTrue(a > -10)
+        XCTAssertTrue(-10 < a)
+        
+        XCTAssertTrue(a == a)
+        XCTAssertFalse(a == -a)
+        XCTAssertFalse(-a == a)
+        XCTAssertFalse(a == b)
+        XCTAssertFalse(b == a)
+        XCTAssertFalse(a == 10)
+        XCTAssertFalse(10 == a)
+        
+        XCTAssertTrue(c < b)
+        XCTAssertTrue(b > c)
+        XCTAssertTrue(c < -b)
+        XCTAssertTrue(-b > c)
         
         XCTAssertFalse(BigInteger.infinit > BigInteger.infinit)
         XCTAssertFalse(BigInteger.infinit < BigInteger.infinit)
         XCTAssertTrue(BigInteger.infinit == BigInteger.infinit)
         
-        XCTAssertFalse(BigInteger.infinit > -BigInteger.infinit)
-        XCTAssertFalse(-BigInteger.infinit < BigInteger.infinit)
+        XCTAssertTrue(BigInteger.infinit > -BigInteger.infinit)
+        XCTAssertTrue(-BigInteger.infinit < BigInteger.infinit)
         XCTAssertTrue(BigInteger.infinit != -BigInteger.infinit)
     }
 }
