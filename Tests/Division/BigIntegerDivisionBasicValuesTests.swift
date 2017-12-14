@@ -31,13 +31,18 @@ class BigIntegerDivisionBasicValuesTests: XCTestCase {
     }
     
     func testInfinity() {
-        let a = BigInteger.infinit
-        let b = BigInteger(value: 10)
+        let inf = BigInteger.infinit
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertTrue((a / b).isInfinit)
-        XCTAssertEqual(b / a, BigInteger.zero)
-        XCTAssertTrue((a / 10).isInfinit)
-        XCTAssertEqual(10 / a, BigInteger.zero)
-        XCTAssertTrue((BigInteger.infinit / a).isNaN)
+        XCTAssertTrue((inf / someBigInt).isInfinit)
+        XCTAssertEqual(someBigInt / inf, BigInteger.zero)
+        XCTAssertTrue((inf / 10).isInfinit)
+        XCTAssertEqual(10 / inf, BigInteger.zero)
+        XCTAssertTrue((BigInteger.infinit / inf).isNaN)
+        
+        XCTAssertTrue((inf / 0).sign)
+        XCTAssertTrue((inf / 0).isInfinit)
+        XCTAssertFalse((-inf / 0).sign)
+        XCTAssertTrue((-inf / 0).isInfinit)
     }
 }
