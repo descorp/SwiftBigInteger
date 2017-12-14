@@ -19,38 +19,38 @@ class BigIntegerDivisionIUIntTests: XCTestCase {
         XCTAssertTrue(a.sign)
     }
     
-    func testDivideZeroByZero() {
+    func testDividezeroByzero() {
         let a = BigInteger()
         let b: UInt = 0
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.NaN)
-        XCTAssertEqual(result2, BigInteger.NaN)
+        XCTAssertEqual(result1, BigInteger.nan)
+        XCTAssertEqual(result2, BigInteger.nan)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
     
-    func testDivideByZero() {
+    func testDivideByzero() {
         let a = BigInteger(value: 144)
         let b: UInt = 0
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.NaN)
-        XCTAssertEqual(result2, BigInteger.Zero)
+        XCTAssertEqual(result1, BigInteger.nan)
+        XCTAssertEqual(result2, BigInteger.zero)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
     
-    func testDivideZeroByOne() {
+    func testDividezeroByOne() {
         let a = BigInteger()
         let b: UInt = 1
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.Zero)
-        XCTAssertEqual(result2, BigInteger.NaN)
+        XCTAssertEqual(result1, BigInteger.zero)
+        XCTAssertEqual(result2, BigInteger.nan)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
@@ -86,7 +86,7 @@ class BigIntegerDivisionIUIntTests: XCTestCase {
         let result1 = a / b
         let result2 = b / a
         XCTAssertEqual(result1, BigInteger(value: 12))
-        XCTAssertEqual(result2, BigInteger.Zero)
+        XCTAssertEqual(result2, BigInteger.zero)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
@@ -97,7 +97,7 @@ class BigIntegerDivisionIUIntTests: XCTestCase {
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.Zero)
+        XCTAssertEqual(result1, BigInteger.zero)
         XCTAssertEqual(result2, BigInteger(value: 12))
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
@@ -109,7 +109,7 @@ class BigIntegerDivisionIUIntTests: XCTestCase {
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.Zero)
+        XCTAssertEqual(result1, BigInteger.zero)
         XCTAssertEqual(result2, BigInteger(value: -12))
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)

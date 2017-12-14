@@ -19,39 +19,39 @@ class BigIntegerDivisionITests: XCTestCase {
         XCTAssertTrue(a.sign)
     }
     
-    func testDivideZeroByZero() {
+    func testDividezeroByzero() {
         let a = BigInteger()
         let b = BigInteger()
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.NaN)
+        XCTAssertEqual(result, BigInteger.nan)
         XCTAssertTrue(result.sign)
     }
     
-    func testDivideByZero() {
+    func testDivideByzero() {
         let a = BigInteger(value: 144)
         let b = BigInteger()
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.NaN)
+        XCTAssertEqual(result, BigInteger.nan)
         XCTAssertTrue(result.sign)
     }
     
-    func testDivideZeroByMinusOne() {
+    func testDividezeroByMinusOne() {
         let a = BigInteger()
         let b = BigInteger(value: -1)
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.Zero)
+        XCTAssertEqual(result, BigInteger.zero)
         XCTAssertTrue(result.sign)
     }
     
-    func testDivideZeroByOne() {
+    func testDividezeroByOne() {
         let a = BigInteger()
         let b = BigInteger(value: 1)
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.Zero)
+        XCTAssertEqual(result, BigInteger.zero)
         XCTAssertFalse(result.sign)
     }
     

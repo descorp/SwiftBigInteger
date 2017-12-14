@@ -9,7 +9,7 @@
 import XCTest
 @testable import BigInteger
 
-class BigIntegerTests: XCTestCase {
+class BigIntegerInitTests: XCTestCase {
     
     func testInit() {
         let a = BigInteger()
