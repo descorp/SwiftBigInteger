@@ -11,23 +11,23 @@ import XCTest
 class BigIntegerDivisionBasicValuesTests: XCTestCase {
     
     func testZero() {
-        let a = BigInteger.zero
-        let b = BigInteger(value: 10)
+        let zero = BigInteger.zero
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertEqual(a / b, BigInteger.zero)
-        XCTAssertTrue((b / a).isNaN)
-        XCTAssertEqual(a / 10, BigInteger.zero)
-        XCTAssertTrue((10 / a).isNaN)
+        XCTAssertEqual(zero / someBigInt, BigInteger.zero)
+        XCTAssertTrue((someBigInt / zero).isNaN)
+        XCTAssertEqual(zero / 10, BigInteger.zero)
+        XCTAssertTrue((10 / zero).isNaN)
     }
     
     func testNan() {
-        let a = BigInteger.nan
-        let b = BigInteger(value: 10)
+        let nan = BigInteger.nan
+        let someBigInt = BigInteger(value: 10)
         
-        XCTAssertTrue((a / b).isNaN)
-        XCTAssertTrue((b / a).isNaN)
-        XCTAssertTrue((a / 10).isNaN)
-        XCTAssertTrue((10 / a).isNaN)
+        XCTAssertTrue((nan / someBigInt).isNaN)
+        XCTAssertTrue((someBigInt / nan).isNaN)
+        XCTAssertTrue((nan / 10).isNaN)
+        XCTAssertTrue((10 / nan).isNaN)
     }
     
     func testInfinity() {
