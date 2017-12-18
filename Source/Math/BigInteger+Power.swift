@@ -12,11 +12,11 @@ extension BigInteger {
     
     // MARK: power
     static func ^(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return BigInteger.pow(lhs: lhs, rhs: UInt64(abs(rhs)))
+        return BigInteger.pow(lhs: lhs, rhs: UInt64(Swift.abs(rhs)))
     }
     
     static func ^(lhs: BigInteger, rhs: Int64) -> BigInteger {
-        return BigInteger.pow(lhs: lhs, rhs: UInt64(abs(rhs)))
+        return BigInteger.pow(lhs: lhs, rhs: UInt64(Swift.abs(rhs)))
     }
     
     static func ^(lhs: BigInteger, rhs: UInt) -> BigInteger {
