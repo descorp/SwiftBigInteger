@@ -10,7 +10,7 @@ import XCTest
 
 class BigIntegerDivisionIUIntTests: XCTestCase {
     
-    func testPostfixSubstraction() {
+    func testPostfixDivision() {
         var a = BigInteger(value: 144)
         let b: UInt = 12
         
