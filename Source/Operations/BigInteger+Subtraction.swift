@@ -38,7 +38,7 @@ extension BigInteger {
                 return BigInteger()
             }
             
-            let comparisom = Array.compare(Array<Int8>(lhs.array), Array<Int8>(rhs.array))
+            let comparisom = Container.compare(lhs.array, rhs.array)
             return BigInteger(raw: value, sign: comparisom > 0 ? lhs.sign : !lhs.sign)
         }
         
@@ -100,7 +100,7 @@ extension BigInteger {
     static internal func subtract(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {
         var biggest, smallest : ContiguousArray<Int8>
         
-        let compare = Array.compare(Array<Int8>(lhs), Array<Int8>(rhs))
+        let compare = Container.compare(lhs, rhs)
         if compare > 0 {
             biggest = lhs
             smallest = rhs
