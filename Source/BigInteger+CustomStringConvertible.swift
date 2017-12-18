@@ -16,6 +16,15 @@ extension BigInteger : CustomStringConvertible {
     /// type to a string by using the `String(describing:)` initializer. For
     /// example:
     var description: String {
+        if self.isInfinit {
+            return (sign ? "" : "-" ) + "inf"
+        }
+        
+        if self.isNaN {
+            return "nan"
+        }
+        
+        
         return (sign ? "" : "-" ) + array.reversed().toString()
     }
 }

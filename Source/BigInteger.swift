@@ -11,11 +11,70 @@ import Foundation
 /// Implementation of Big integer value.
 struct BigInteger {
     
+    // MARK: Private fields
+    
     internal var array: ContiguousArray<Int8>
+    
+    // MARK: Public static values
+    
+    /// Shortcut for BigInteger with zero value
+    static let zero: BigInteger = BigInteger()
+    
+    /// Return true if current BigInteger is zero
+    var isZero: Bool {
+        return self.array.count == 1 && array[0] == 0
+    }
+    
+    /// A quiet NaN ("not a number").
+    ///
+    /// A NaN compares not equal, not greater than, and not less than every
+    /// value, including itself. Passing a NaN to an operation generally results
+    /// in NaN.
+    ///
+    ///     // x > BigInteger.nan == false
+    ///     // x < BigInteger.nan == false
+    ///     // x == BigInteger.nan == false
+    ///
+    /// Because a NaN always compares not equal to itself, to test whether a
+    /// floating-point value is NaN, use its `isNaN` property instead of the
+    /// equal-to operator (`==`). In the following example, `y` is NaN.
+    ///
+    ///     let y = x + BigInteger.nan
+    ///     print(y == BigInteger.nan)
+    ///     // Prints "false"
+    ///     print(y.isNaN)
+    ///     // Prints "true"
+    static let nan: BigInteger = BigInteger(raw: [], sign: true)
+    
+    /// Return true if current BigInteger is NaN
+    var isNaN: Bool {
+        return self.array == []
+    }
+    
+    /// Positive infinity.
+    ///
+    /// Infinity compares greater than all finite numbers and equal to other
+    /// infinite values.
+    ///
+    ///     BigInteger.infinity  >  BigInteger.infinity // false
+    ///     BigInteger.infinity  <  BigInteger.infinity // false
+    ///     BigInteger.infinity ==  BigInteger.infinity // true
+    static let infinit: BigInteger = BigInteger(raw: [99], sign: true)
+    
+    /// Returns true if current BigInteger is Infinite
+    var isInfinit: Bool {
+        return self.array != [] && self.array[0] > 9
+    }
+    
+    // MARK: Public fields
+    
+    /// Indicate if value is positive or negative
     var sign: Bool
     
+    // MARK: Public constructors
+    
     /// Constructor for Big Integer - creating 'zero' Big integer.
-    init() {
+    internal init() {
         sign = true
         array = [0]
     }
@@ -62,6 +121,8 @@ struct BigInteger {
         
         array = ContiguousArray<Int8>(convertFrom(temp).reversed())
     }
+    
+    // MARK: Private constructors
     
     internal init(raw array: ContiguousArray<Int8>, sign: Bool) {
         self.array = array.trimZeros()

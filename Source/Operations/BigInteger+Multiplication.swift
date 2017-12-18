@@ -12,8 +12,23 @@ extension BigInteger {
     
     // MARK: multiplication
     static func *(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        let zero = BigInteger()
-        if lhs == zero || rhs == zero {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit  {
+            return rhs.sign == lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return rhs
+        }
+        
+        if lhs.isZero || rhs.isZero {
             return zero
         }
         

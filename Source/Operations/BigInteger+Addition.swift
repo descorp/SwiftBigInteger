@@ -12,6 +12,26 @@ extension BigInteger {
     
     // MARK: addition
     static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign != lhs.sign  {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign == lhs.sign  {
+            return lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return rhs
+        }
+        
         if lhs.sign == rhs.sign {
             let result = BigInteger.add(lhs.array, rhs.array)
             return BigInteger(raw: result, sign: lhs.sign)

@@ -12,6 +12,26 @@ extension BigInteger {
     
     // MARK: subtraction
     static func -(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign == lhs.sign  {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign != lhs.sign  {
+            return lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return -rhs
+        }
+        
         if lhs.sign == rhs.sign {
             let value = BigInteger.subtract(lhs.array, rhs.array)
             if value == [0] {

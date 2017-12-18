@@ -11,6 +11,9 @@ import Foundation
 // MARK: Comparable
 
 extension BigInteger {
+    
+    // MARK: Comparing < with Integers
+    
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than that of the second argument.
     ///
@@ -23,23 +26,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func <(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) < 0
+        return lhs < temp
     }
     
     static func <(lhs: BigInteger, rhs: Int64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) < 0
+        return lhs < temp
     }
     
     static func <(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) < 0
+        return lhs < temp
     }
     
     static func <(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) < 0
+        return lhs < temp
     }
+    
+    // MARK: Comparing <= with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than or equal to that of the second argument.
@@ -49,23 +54,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func <=(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) <= 0
+        return lhs <= temp
     }
     
     static func <=(lhs: BigInteger, rhs: Int64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) <= 0
+        return lhs <= temp
     }
     
     static func <=(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) <= 0
+        return lhs <= temp
     }
     
     static func <=(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) <= 0
+        return lhs <= temp
     }
+    
+    // MARK: Comparing >= with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is greater than or equal to that of the second argument.
@@ -75,23 +82,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func >=(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) >= 0
+        return lhs >= temp
     }
     
     static func >=(lhs: BigInteger, rhs: Int64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) >= 0
+        return lhs >= temp
     }
     
     static func >=(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) >= 0
+        return lhs >= temp
     }
     
     static func >=(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) >= 0
+        return lhs >= temp
     }
+    
+    // MARK: Comparing > with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is greater than that of the second argument.
@@ -101,23 +110,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func >(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) > 0
+        return lhs > temp
     }
     
     static func >(lhs: BigInteger, rhs: Int64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) > 0
+        return lhs > temp
     }
     
     static func >(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) > 0
+        return lhs > temp
     }
     
     static func >(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(value: rhs)
-        return BigInteger.compare(lhs, temp) > 0
+        return lhs > temp
     }
+    
+    // MARK: Comparing < with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than that of the second argument.
@@ -131,23 +142,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func <(lhs: Int, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) < 0
+        return temp < rhs
     }
     
     static func <(lhs: Int64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) < 0
+        return temp < rhs
     }
     
     static func <(lhs: UInt, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) < 0
+        return temp < rhs
     }
     
     static func <(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) < 0
+        return temp < rhs
     }
+    
+    // MARK: Comparing <= with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than or equal to that of the second argument.
@@ -157,23 +170,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func <=(lhs: Int, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) <= 0
+        return temp <= rhs
     }
     
     static func <=(lhs: Int64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) <= 0
+        return temp <= rhs
     }
     
     static func <=(lhs: UInt, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) <= 0
+        return temp <= rhs
     }
     
     static func <=(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) <= 0
+        return temp <= rhs
     }
+    
+    // MARK: Comparing >= with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is greater than or equal to that of the second argument.
@@ -183,23 +198,25 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func >=(lhs: Int, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) >= 0
+        return temp >= rhs
     }
     
     static func >=(lhs: Int64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) >= 0
+        return temp >= rhs
     }
     
     static func >=(lhs: UInt, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) >= 0
+        return temp >= rhs
     }
     
     static func >=(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) >= 0
+        return temp >= rhs
     }
+    
+    // MARK: Comparing > with Integers
     
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is greater than that of the second argument.
@@ -209,22 +226,22 @@ extension BigInteger {
     ///   - rhs: Another value to compare.
     static func >(lhs: Int, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) > 0
+        return temp > rhs
     }
     
     static func >(lhs: Int64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) > 0
+        return temp > rhs
     }
     
     static func >(lhs: UInt, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) > 0
+        return temp > rhs
     }
     
     static func >(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(value: lhs)
-        return BigInteger.compare(temp, rhs) > 0
+        return temp > rhs
     }
 }
 
