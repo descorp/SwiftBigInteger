@@ -1,4 +1,4 @@
-//
+  //
 //  BigInteger.swift
 //  BigInteger
 //
@@ -11,9 +11,11 @@ import Foundation
 /// Implementation of Big integer value.
 struct BigInteger {
     
+    typealias Container = ContiguousArray<Int8>
+    
     // MARK: Private fields
     
-    internal var array: ContiguousArray<Int8>
+    internal var array: Container
     
     // MARK: Public static values
     
@@ -69,7 +71,7 @@ struct BigInteger {
     // MARK: Public fields
     
     /// Indicate if value is positive or negative
-    var sign: Bool
+    internal(set) var sign: Bool
     
     // MARK: Public constructors
     
@@ -108,23 +110,21 @@ struct BigInteger {
     }
     
     /// Optional constructor for Big Integer - converts string into Big integer.
-    /// - Parameter value: string containing big integer. May only contain numbers and '-' sign in left side to indicate a nagative value
+    /// Should only contain numbers and '-' sign in left side to indicate a nagative value.
+    /// Any non-numeric charecter will be ignored
+    /// - Parameter value: string containing big integer.
+    ///
     init?(value: String) {
-        guard value.isValidNumber else { return nil }
-        var temp = value
-        if value.hasPrefix("-") {
-            sign = false
-            temp.removeFirst(1)
-        } else {
-            sign = true
-        }
+        let temp = value.trimNoneNumeric()
+        guard !temp.isEmpty else { return nil }
         
-        array = ContiguousArray<Int8>(convertFrom(temp).reversed())
+        sign = !value.hasPrefix("-")
+        array = Container(convertFrom(temp).reversed()).trimZeros()
     }
     
     // MARK: Private constructors
     
-    internal init(raw array: ContiguousArray<Int8>, sign: Bool) {
+    internal init(raw array: Container, sign: Bool) {
         self.array = array.trimZeros()
         self.sign = sign
     }

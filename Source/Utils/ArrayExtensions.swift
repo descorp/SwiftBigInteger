@@ -8,25 +8,25 @@
 
 import Foundation
 
-extension Array where Element: Comparable {
+extension ContiguousArray where Element == Int8 {
     
     /// Compare two arrays of BinaryInteger
     /// - Parameter lhs: first array
     /// - Parameter rhs: second array
     /// - Returns: Result of comparison (-1 - smaller; 0 - equal; +1 - bigger)
-    internal static func compare(_ lhs: Array, _ rhs: Array) -> Int {
+    internal static func compare(_ lhs: ContiguousArray, _ rhs: ContiguousArray) -> Int {
         if lhs.count != rhs.count {
             return lhs.count > rhs.count ? 1 : -1
         }
         
-        var i = 0
-        while i < lhs.count {
+        var i = lhs.count - 1
+        while i >= 0 {
             let lhsv = lhs[i]
             let rhsv = rhs[i]
             if lhsv != rhsv {
                 return lhsv < rhsv ? -1 : 1
             }
-            i += 1
+            i -= 1
         }
         
         return 0
