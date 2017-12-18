@@ -12,13 +12,33 @@ extension BigInteger {
     
     // MARK: subtraction
     static func -(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign == lhs.sign  {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign != lhs.sign  {
+            return lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return -rhs
+        }
+        
         if lhs.sign == rhs.sign {
             let value = BigInteger.subtract(lhs.array, rhs.array)
             if value == [0] {
                 return BigInteger()
             }
             
-            let comparisom = Array.compare(Array<Int8>(lhs.array), Array<Int8>(rhs.array))
+            let comparisom = Container.compare(lhs.array, rhs.array)
             return BigInteger(raw: value, sign: comparisom > 0 ? lhs.sign : !lhs.sign)
         }
         
@@ -80,7 +100,7 @@ extension BigInteger {
     static internal func subtract(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {
         var biggest, smallest : ContiguousArray<Int8>
         
-        let compare = Array.compare(Array<Int8>(lhs), Array<Int8>(rhs))
+        let compare = Container.compare(lhs, rhs)
         if compare > 0 {
             biggest = lhs
             smallest = rhs

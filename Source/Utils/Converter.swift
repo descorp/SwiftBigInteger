@@ -8,8 +8,6 @@
 
 import Foundation
 
-internal let numberRegex = "^(-?)[1-9][0-9]*$"
-
 /** Converts integer value into array of Int8
  - Parameter value: Always positive integer value (UInt, UInt64 e.t.c)
  - Returns: An array of Int8
@@ -45,6 +43,7 @@ internal func convertFrom(_ text: String) -> ContiguousArray<Int8> {
     for c in text.unicodeScalars {
         result.append(Int8(c.value - 48))
     }
+    
     return result
 }
 
