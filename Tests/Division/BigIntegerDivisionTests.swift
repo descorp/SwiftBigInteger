@@ -24,7 +24,7 @@ class BigIntegerDivisionITests: XCTestCase {
         let b = BigInteger()
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.nan)
+        XCTAssertTrue(result.isNaN)
         XCTAssertTrue(result.sign)
     }
     
@@ -33,7 +33,7 @@ class BigIntegerDivisionITests: XCTestCase {
         let b = BigInteger()
         
         let result = a / b
-        XCTAssertEqual(result, BigInteger.nan)
+        XCTAssertTrue(result.isInfinit)
         XCTAssertTrue(result.sign)
     }
     
@@ -52,7 +52,7 @@ class BigIntegerDivisionITests: XCTestCase {
         
         let result = a / b
         XCTAssertEqual(result, BigInteger.zero)
-        XCTAssertFalse(result.sign)
+        XCTAssertTrue(result.sign)
     }
     
     func testDivideOposite() {

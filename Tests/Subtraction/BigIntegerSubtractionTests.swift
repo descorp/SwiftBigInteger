@@ -73,6 +73,15 @@ class BigIntegerSubtractionTests: XCTestCase {
         XCTAssertTrue(result.sign)
     }
     
+    func testSubtract() {
+        let a = BigInteger(value: 45)
+        let b = BigInteger(value: 36)
+        
+        let result = a - b
+        XCTAssertEqual(result, BigInteger(value: 9))
+        XCTAssertTrue(result.sign)
+    }
+    
     func testSubtractAisBiggerThanB() {
         let a = BigInteger(value: 12345)
         let b = BigInteger(value: 12340)

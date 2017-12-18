@@ -30,11 +30,11 @@ class BigIntegerInitTests: XCTestCase {
     }
     
     func testInitWithPositiveString() {
-        let str = "-123456789012345678901234567890"
+        let str = "123456789012345678901234567890"
         let a = BigInteger(value: str)
         XCTAssertNotNil(a)
         XCTAssertEqual(a!.description, str)
-        XCTAssertFalse(a!.sign)
+        XCTAssertTrue(a!.sign)
     }
     
     func testInitWithNegativeString() {
@@ -45,8 +45,32 @@ class BigIntegerInitTests: XCTestCase {
         XCTAssertFalse(a!.sign)
     }
     
-    func testInitWithInvalidString() {
+    func testInitWithStringWithZeros() {
+        let str = "000000023456789012345678900"
+        let a = BigInteger(value: str)
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, "23456789012345678900")
+        XCTAssertTrue(a!.sign)
+    }
+    
+    func testInitWithStringWithSpaces() {
+        let str = "123 456 789 012 345 678 900"
+        let a = BigInteger(value: str)
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, "123456789012345678900")
+        XCTAssertTrue(a!.sign)
+    }
+    
+    func testInitWithFloatString() {
         let str = "0.123456789012345678901234567890"
+        let a = BigInteger(value: str)
+        XCTAssertNotNil(a)
+        XCTAssertEqual(a!.description, "123456789012345678901234567890")
+        XCTAssertTrue(a!.sign)
+    }
+    
+    func testInitWithInvalidString() {
+        let str = "-Fifty five"
         let a = BigInteger(value: str)
         XCTAssertNil(a)
     }
@@ -62,6 +86,7 @@ class BigIntegerInitTests: XCTestCase {
         let a = BigInteger(value: str)
         
         XCTAssertNotNil(a)
+        print(str)
         guard let actual = a else { return }
         
         XCTAssertEqual(actual.description, result.toString())

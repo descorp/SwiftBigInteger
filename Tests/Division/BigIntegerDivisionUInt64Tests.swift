@@ -26,10 +26,8 @@ class BigIntegerDivisionIUInt64Tests: XCTestCase {
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.nan)
-        XCTAssertEqual(result2, BigInteger.nan)
-        XCTAssertTrue(result1.sign)
-        XCTAssertTrue(result2.sign)
+        XCTAssertTrue(result1.isNaN)
+        XCTAssertTrue(result2.isNaN)
     }
     
     func testDivideByzero() {
@@ -38,7 +36,7 @@ class BigIntegerDivisionIUInt64Tests: XCTestCase {
         
         let result1 = a / b
         let result2 = b / a
-        XCTAssertEqual(result1, BigInteger.nan)
+        XCTAssertTrue(result1.isInfinit)
         XCTAssertEqual(result2, BigInteger.zero)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
@@ -51,7 +49,7 @@ class BigIntegerDivisionIUInt64Tests: XCTestCase {
         let result1 = a / b
         let result2 = b / a
         XCTAssertEqual(result1, BigInteger.zero)
-        XCTAssertEqual(result2, BigInteger.nan)
+        XCTAssertTrue(result2.isInfinit)
         XCTAssertTrue(result1.sign)
         XCTAssertTrue(result2.sign)
     }
@@ -113,6 +111,6 @@ class BigIntegerDivisionIUInt64Tests: XCTestCase {
         XCTAssertEqual(result1, BigInteger.zero)
         XCTAssertEqual(result2, BigInteger(value: -12))
         XCTAssertTrue(result1.sign)
-        XCTAssertTrue(result2.sign)
+        XCTAssertFalse(result2.sign)
     }
 }

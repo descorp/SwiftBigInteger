@@ -15,9 +15,9 @@ class BigIntegerDivisionBasicValuesTests: XCTestCase {
         let someBigInt = BigInteger(value: 10)
         
         XCTAssertEqual(zero / someBigInt, BigInteger.zero)
-        XCTAssertTrue((someBigInt / zero).isNaN)
+        XCTAssertTrue((someBigInt / zero).isInfinit)
         XCTAssertEqual(zero / 10, BigInteger.zero)
-        XCTAssertTrue((10 / zero).isNaN)
+        XCTAssertTrue((10 / zero).isInfinit)
     }
     
     func testNan() {
