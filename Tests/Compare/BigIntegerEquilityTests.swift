@@ -9,11 +9,11 @@
 import XCTest
 
 class BigIntegerEquilityTests: XCTestCase {
-    
+
     func testEquility() {
-        let b = BigInteger(value: -42)
-        let a = BigInteger(value: 42)
-        
+        let b = BigInteger(-42)
+        let a = BigInteger(42)
+
         XCTAssertTrue(a != b)
         XCTAssertTrue(b != a)
         XCTAssertTrue(a == -b)

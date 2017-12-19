@@ -9,20 +9,20 @@
 import XCTest
 
 class BigIntegerHashableTest: XCTestCase {
-    
+
     func testBigIntegerStoredInSet() {
         let a = NSCountedSet()
 
-        for i in 0...1000000 {
-            a.add(BigInteger(value: i))
+        for i in 0...100000 {
+            a.add(BigInteger(i))
         }
-        
+
         XCTAssertTrue(a.reduce(true, { (current, next) -> Bool in
             current && a.count(for: next) == 1
         }))
-        
-        XCTAssertTrue(a.count(for: BigInteger(value: 2001)) == 1)
-        XCTAssertTrue(a.count(for: BigInteger(value: 1000002)) == 0)
+
+        XCTAssertTrue(a.count(for: BigInteger(2001)) == 1)
+        XCTAssertTrue(a.count(for: BigInteger(100002)) == 0)
     }
 
 }
