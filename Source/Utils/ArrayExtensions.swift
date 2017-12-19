@@ -11,6 +11,7 @@ import Foundation
 extension ContiguousArray where Element == Int8 {
     
     /// Compare two arrays of BinaryInteger
+    ///
     /// - Parameter lhs: first array
     /// - Parameter rhs: second array
     /// - Returns: Result of comparison (-1 - smaller; 0 - equal; +1 - bigger)
@@ -36,6 +37,7 @@ extension ContiguousArray where Element == Int8 {
 extension ContiguousArray where Element == Int8 {
     
     /// Trim all zeros from the end of array
+    ///
     /// - Returns: trimmed array
     internal func trimZeros() -> ContiguousArray {
         var temp = self
@@ -47,9 +49,10 @@ extension ContiguousArray where Element == Int8 {
     }
 }
 
-extension Array where Element: BinaryInteger {
+extension Collection where Element: Any {
     
     /// Agregates all elements of Integer-based array into one string
+    ///
     /// - Parameter prefix: string sequence that will be placed before actual content of the array
     /// - Returns: A string that agregates whole array into one string
     internal func toString(prefix: String = "") -> String {

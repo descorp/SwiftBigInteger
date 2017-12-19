@@ -28,7 +28,7 @@ extension BigInteger {
     }
     
     private static func pow(lhs: BigInteger, rhs: UInt64) -> BigInteger {
-        if(rhs == 0) { return BigInteger(value: 1) }
+        if(rhs == 0) { return BigInteger(1) }
         if(rhs == 1) { return lhs }
         
         var temp = lhs
