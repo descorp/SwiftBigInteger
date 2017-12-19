@@ -47,6 +47,11 @@ class BigIntegerCompareBasicValuesTests : XCTestCase {
         XCTAssertFalse(10 > -nan)
         XCTAssertFalse(nan > -10)
         XCTAssertFalse(-10 < -nan)
+        
+        XCTAssertFalse(nan > nan)
+        XCTAssertFalse(nan < nan)
+        XCTAssertFalse(nan >= nan)
+        XCTAssertFalse(nan <= nan)
     }
 
     func testInfinity() {
@@ -68,10 +73,22 @@ class BigIntegerCompareBasicValuesTests : XCTestCase {
         XCTAssertTrue(someBigInt > negativeInf)
         XCTAssertTrue(negativeInf < -someBigInt)
         XCTAssertTrue(-someBigInt > negativeInf)
+        
+        XCTAssertTrue(negativeInf <= someBigInt)
+        XCTAssertTrue(someBigInt >= negativeInf)
+        XCTAssertTrue(negativeInf <= -someBigInt)
+        XCTAssertTrue(-someBigInt >= negativeInf)
 
         XCTAssertFalse(inf > inf)
         XCTAssertFalse(inf < inf)
+        XCTAssertTrue(inf >= inf)
+        XCTAssertTrue(inf <= inf)
 
+        XCTAssertFalse(negativeInf > negativeInf)
+        XCTAssertFalse(negativeInf < negativeInf)
+        XCTAssertTrue(negativeInf >= negativeInf)
+        XCTAssertTrue(negativeInf <= negativeInf)
+        
         XCTAssertTrue(inf > negativeInf)
         XCTAssertTrue(negativeInf < inf)
     }

@@ -72,4 +72,28 @@ class BigIntegerAdditionTests: XCTestCase {
         XCTAssertEqual(result, BigInteger.zero)
         XCTAssertTrue(result.sign)
     }
+    
+    func testBigIntegerContainersAdd() {
+        let a: ContiguousArray<Int8> = [3,2,1]
+        let b: ContiguousArray<Int8> = [3,2,1]
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [6,4,2])
+    }
+    
+    func testBigIntegerContainersAddWithRightEmpty() {
+        let a: ContiguousArray<Int8> = [3,2,1]
+        let b: ContiguousArray<Int8> = []
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [3,2,1])
+    }
+    
+    func testBigIntegerContainersAddWithLeftEmpty() {
+        let a: ContiguousArray<Int8> = []
+        let b: ContiguousArray<Int8> = [3,2,1]
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [3,2,1])
+    }
 }

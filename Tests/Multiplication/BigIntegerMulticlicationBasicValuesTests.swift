@@ -39,5 +39,14 @@ class BigIntegerMulticlicationBasicValuesTests: XCTestCase {
         XCTAssertTrue((b * a).isInfinit)
         XCTAssertTrue((a * 10).isInfinit)
         XCTAssertTrue((10 * a).isInfinit)
+        
+        XCTAssertTrue((BigInteger.infinit * BigInteger.infinit).isInfinit)
+        XCTAssertTrue((BigInteger.infinit * BigInteger.infinit).sign)
+        XCTAssertTrue((BigInteger.infinit * -BigInteger.infinit).isInfinit)
+        XCTAssertFalse((BigInteger.infinit * -BigInteger.infinit).sign)
+        XCTAssertTrue((-BigInteger.infinit * BigInteger.infinit).isInfinit)
+        XCTAssertFalse((-BigInteger.infinit * BigInteger.infinit).sign)
+        XCTAssertTrue((-BigInteger.infinit * -BigInteger.infinit).isInfinit)
+        XCTAssertTrue((-BigInteger.infinit * -BigInteger.infinit).sign)
     }
 }
