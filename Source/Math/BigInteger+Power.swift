@@ -9,8 +9,8 @@
 import Foundation
 
 extension BigInteger {
-    
-    // MARK: power
+
+    ///
     static func ^(lhs: BigInteger, rhs: Int) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(Swift.abs(rhs)))
     }

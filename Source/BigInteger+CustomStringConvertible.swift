@@ -12,10 +12,7 @@ extension BigInteger : CustomStringConvertible {
     
     /// A textual representation of this instance.
     ///
-    /// Instead of accessing this property directly, convert an instance of any
-    /// type to a string by using the `String(describing:)` initializer. For
-    /// example:
-    var description: String {
+    public var description: String {
         if self.isInfinit {
             return (sign ? "" : "-" ) + "inf"
         }
