@@ -77,19 +77,19 @@ extension BigInteger {
     }
     
     static func +=(lhs: inout BigInteger, rhs: Int) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: Int64) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: UInt) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: UInt64) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static internal func add(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {

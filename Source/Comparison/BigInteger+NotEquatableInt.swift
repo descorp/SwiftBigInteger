@@ -19,22 +19,22 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func !=(lhs: Int, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(lhs)
         return temp != rhs
     }
     
     static func !=(lhs: Int64, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(lhs)
         return temp != rhs
     }
     
     static func !=(lhs: UInt, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(lhs)
         return temp != rhs
     }
     
     static func !=(lhs: UInt64, rhs: BigInteger) -> Bool {
-        let temp = BigInteger(value: lhs)
+        let temp = BigInteger(lhs)
         return temp != rhs
     }
     
@@ -47,22 +47,22 @@ extension BigInteger {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     static func !=(lhs: BigInteger, rhs: Int) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(rhs)
         return temp != lhs
     }
     
     static func !=(lhs: BigInteger, rhs: Int64) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(rhs)
         return temp != lhs
     }
     
     static func !=(lhs: BigInteger, rhs: UInt) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(rhs)
         return temp != lhs
     }
     
     static func !=(lhs: BigInteger, rhs: UInt64) -> Bool {
-        let temp = BigInteger(value: rhs)
+        let temp = BigInteger(rhs)
         return temp != lhs
     }
 }

@@ -20,7 +20,7 @@ struct BigInteger {
     // MARK: Public static values
     
     /// Shortcut for BigInteger with zero value
-    static let zero: BigInteger = BigInteger()
+    static let zero: BigInteger = BigInteger.init(raw: [0], sign: true)
     
     /// Return true if current BigInteger is zero
     var isZero: Bool {
@@ -75,15 +75,11 @@ struct BigInteger {
     
     // MARK: Public constructors
     
-    /// Constructor for Big Integer - creating 'zero' Big integer.
-    internal init() {
-        sign = true
-        array = [0]
-    }
-    
-    /// Constructor for Big Integer - converts unsigned integer into Big integer.
+    /// Constructor
+    ///
+    /// Converts unsigned integer into Big integer.
     /// - Parameter value: UInt
-    init(value: UInt) {
+    init<T: UnsignedInteger>(_ value: T) {
         sign = true
         array = splitOnDigitsAndReverse(value)
     }
@@ -95,7 +91,9 @@ struct BigInteger {
         array = splitOnDigitsAndReverse(value)
     }
     
-    /// Constructor for Big Integer - converts signed integer into Big integer.
+    /// Constructor
+    ///
+    /// Converts signed simple integer into Big Integer.
     /// - Parameter value: value of Int
     init(value: Int) {
         sign = value >= 0
@@ -114,8 +112,7 @@ struct BigInteger {
     /// Any non-numeric charecter will be ignored
     /// - Parameter value: string containing big integer.
     ///
-    init?(value: String) {
-        let temp = value.trimNoneNumeric()
+    init?(_ value: String) {
         guard !temp.isEmpty else { return nil }
         
         sign = !value.hasPrefix("-")

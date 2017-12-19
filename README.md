@@ -30,19 +30,19 @@ pod 'BigIntSwift'
 From integer primitives
 
 ```swift
-        let a = BigInteger(value: 1234567)
+        let a = BigInteger(1234567)
         a.sign // true
 ```
 
 ```swift
-        let a = BigInteger(value: UInt64(12345678901234))
+        let a = BigInteger(UInt64(12345678901234))
         a.sign // true
 ```
 
 From string
 
 ```swift
-        let a = BigInteger(value: "-123456789012345678901234567890")
+        let a = BigInteger("-123456789012345678901234567890")
         a.sign // false
 ```
 
@@ -51,9 +51,9 @@ From string
 Can be comared with other 'BigInteger' and Integer primitives
 
 ```swift
-        let a = BigInteger(value: 42)
-        let b = BigInteger(value: -42)        
-        
+        let a = BigInteger(42)
+        let b = BigInteger(-42)        
+
         a != b          // true
         a == -b         // true
         a > b           // true
@@ -70,9 +70,9 @@ Can be comared with other 'BigInteger' and Integer primitives
 Can perform addiotion with other 'BigInteger' and Integer primitives
 
 ```swift
-        let a = BigInteger(value: 42)
-        let b = BigInteger(value: -42)        
-        
+        let a = BigInteger(42)
+        let b = BigInteger(-42)        
+
         a + b           //  0
         b + 42          //  0
         b + UInt(42)    //  0
@@ -86,9 +86,9 @@ Can perform addiotion with other 'BigInteger' and Integer primitives
 Can perform substraction with other 'BigInteger' and Integer primitives
 
 ```swift
-        let a = BigInteger(value: 42)
-        let b = BigInteger(value: -42)        
-        
+        let a = BigInteger(42)
+        let b = BigInteger(-42)        
+
         a - b           //  84
         b - 42          // -84
         b - UInt(42)    // -84
@@ -102,9 +102,9 @@ Can perform substraction with other 'BigInteger' and Integer primitives
 Can perform multiplication with other 'BigInteger' and Integer primitives.
 
 ```swift
-        let a = BigInteger(value: 42)
-        let b = BigInteger(value: -42)        
-        
+        let a = BigInteger(42)
+        let b = BigInteger(-42)        
+
         a * b           // -1764
         b * (-1)        //  42
         b * UInt(2)     //  84
