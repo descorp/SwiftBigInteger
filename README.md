@@ -50,11 +50,11 @@ From string
 
 ### Basic values
 
-Shortcut for Big Integer with zero magnitude. -Zero is could be handy in
+Shortcut for Big Integer with zero magnitude. -Zero is could be handy in case of devision of value on -infinity
 
 ```swift
-        BigInteger.zero      // 0
-        -BigInteger.zero      // 0
+        BigInteger.zero       // 0
+        -BigInteger.zero      // -0
 ```
 
 Shortcut for "Non Arifhmetical value". A method or operator returns `nan` when the result of an operation is undefined. For example, the result of dividing zero by zero is NaN
