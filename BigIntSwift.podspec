@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name            = "BigIntSwift"
-  s.version         = "0.0.1"
+  s.version         = "1.0.0"
   s.summary         = "Implementation of Big Integer for Swift"
   s.description      = <<-DESC
 Library to perform arithmetical operations on integer values of enormous size.
