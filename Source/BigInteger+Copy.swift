@@ -10,7 +10,7 @@ import Foundation
 
 extension BigInteger {
     internal func copy() -> BigInteger {
-        var result = BigInteger()
+        var result = BigInteger.zero
         result.array = self.array
         result.sign = self.sign
         return result

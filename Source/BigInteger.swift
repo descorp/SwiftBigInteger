@@ -20,7 +20,7 @@ struct BigInteger {
     // MARK: Public static values
     
     /// Shortcut for BigInteger with zero value
-    static let zero: BigInteger = BigInteger()
+    static let zero: BigInteger = BigInteger.init(raw: [0], sign: true)
     
     /// Return true if current BigInteger is zero
     var isZero: Bool {
@@ -75,51 +75,39 @@ struct BigInteger {
     
     // MARK: Public constructors
     
-    /// Constructor for Big Integer - creating 'zero' Big integer.
-    internal init() {
-        sign = true
-        array = [0]
-    }
-    
-    /// Constructor for Big Integer - converts unsigned integer into Big integer.
+    /// Constructor
+    ///
+    /// Converts unsigned integer into Big integer.
     /// - Parameter value: UInt
-    init(value: UInt) {
+    init<T: UnsignedInteger>(_ value: T) {
         sign = true
-        array = splitOnDigitsAndReverse(value)
+        array = Container(value.asNumericArray())
     }
     
-    /// Constructor for Big Integer - converts unsigned integer into Big integer.
-    /// - Parameter value: value UInt64
-    init(value: UInt64) {
-        sign = true
-        array = splitOnDigitsAndReverse(value)
-    }
-    
-    /// Constructor for Big Integer - converts signed integer into Big integer.
+    /// Constructor
+    ///
+    /// Converts signed simple integer into Big Integer.
     /// - Parameter value: value of Int
-    init(value: Int) {
+    init<T: SignedInteger>(_ value: T) {
         sign = value >= 0
-        array = splitOnDigitsAndReverse(value)
+        array = Container(value.asNumericArray())
     }
     
-    /// Constructor for Big Integer - converts signed integer into Big integer.
-    /// - Parameter value: value of Int64
-    init(value: Int64) {
-        sign = value >= 0
-        array = splitOnDigitsAndReverse(value)
-    }
-    
-    /// Optional constructor for Big Integer - converts string into Big integer.
+    /// Optional constructor
+    ///
+    /// Converts string into Big integer.
     /// Should only contain numbers and '-' sign in left side to indicate a nagative value.
-    /// Any non-numeric charecter will be ignored
+    /// Any other non-numeric charecter will be ignored.
     /// - Parameter value: string containing big integer.
     ///
-    init?(value: String) {
-        let temp = value.trimNoneNumeric()
+    init?(_ value: String) {
+        
+        let temp = value.removeNoneNumericCharecters()
         guard !temp.isEmpty else { return nil }
+        let numericArray = temp.asNumericArray()!
         
         sign = !value.hasPrefix("-")
-        array = Container(convertFrom(temp).reversed()).trimZeros()
+        array = Container(numericArray.reversed()).trimZeros()
     }
     
     // MARK: Private constructors

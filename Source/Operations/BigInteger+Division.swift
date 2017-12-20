@@ -43,7 +43,7 @@ extension BigInteger {
         case let (a,b) where BigInteger.abs(a) < BigInteger.abs(b):
             return BigInteger.zero
         case let (a,b) where BigInteger.abs(a) == BigInteger.abs(b):
-            return BigInteger(value: a.sign == b.sign ? 1 : -1)
+            return BigInteger(a.sign == b.sign ? 1 : -1)
         default:
             break
         }
@@ -53,35 +53,35 @@ extension BigInteger {
     }
     
     static func /(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return lhs / BigInteger(value: rhs)
+        return lhs / BigInteger(rhs)
     }
     
     static func /(lhs: BigInteger, rhs: Int64) -> BigInteger {
-        return lhs / BigInteger(value: rhs)
+        return lhs / BigInteger(rhs)
     }
     
     static func /(lhs: BigInteger, rhs: UInt) -> BigInteger {
-        return lhs / BigInteger(value: rhs)
+        return lhs / BigInteger(rhs)
     }
     
     static func /(lhs: BigInteger, rhs: UInt64) -> BigInteger {
-        return lhs / BigInteger(value: rhs)
+        return lhs / BigInteger(rhs)
     }
     
     static func /(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return BigInteger(value: lhs)  / rhs
+        return BigInteger(lhs)  / rhs
     }
     
     static func /(lhs: Int64, rhs: BigInteger) -> BigInteger {
-        return BigInteger(value: lhs)  / rhs
+        return BigInteger(lhs)  / rhs
     }
     
     static func /(lhs: UInt, rhs: BigInteger) -> BigInteger {
-        return BigInteger(value: lhs) / rhs
+        return BigInteger(lhs) / rhs
     }
     
     static func /(lhs: UInt64, rhs: BigInteger) -> BigInteger {
-        return BigInteger(value: lhs) / rhs
+        return BigInteger(lhs) / rhs
     }
     
     static func /=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -89,19 +89,19 @@ extension BigInteger {
     }
     
     static func /=(lhs: inout BigInteger, rhs: Int) {
-        lhs = lhs / BigInteger(value: rhs)
+        lhs = lhs / BigInteger(rhs)
     }
     
     static func /=(lhs: inout BigInteger, rhs: Int64) {
-        lhs = lhs / BigInteger(value: rhs)
+        lhs = lhs / BigInteger(rhs)
     }
     
     static func /=(lhs: inout BigInteger, rhs: UInt) {
-        lhs = lhs / BigInteger(value: rhs)
+        lhs = lhs / BigInteger(rhs)
     }
     
     static func /=(lhs: inout BigInteger, rhs: UInt64) {
-        lhs = lhs / BigInteger(value: rhs)
+        lhs = lhs / BigInteger(rhs)
     }
     
     static internal func divide(_ lhs: Container, _ rhs: Container) -> Container {
@@ -131,32 +131,5 @@ extension BigInteger {
         }
         
         return Container(result.reversed())
-    }
-    
-    static internal func leftover(_ lhs: Container, _ rhs: Container) -> Container {
-        var result: Container = []
-        var position = lhs.count - 1
-        var temp: Container = []
-        
-        while position >= 0 {
-            if Container.compare(temp, rhs) < 0 {
-                temp.append(lhs[position])
-                position -= 1
-                continue
-            }
-            
-            var divider: Int8 = 1
-            var division = rhs
-            
-            while Container.compare(temp, rhs) > 0 {
-                divider += 1
-                division += rhs
-            }
-            
-            temp = BigInteger.subtract(temp, division)
-            result = temp
-        }
-        
-        return Container(result)
     }
 }

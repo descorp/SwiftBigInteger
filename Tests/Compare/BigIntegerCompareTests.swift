@@ -11,10 +11,10 @@ import XCTest
 class BigIntegerCompareTests: XCTestCase {
 
     func testCompareWithZero() {
-        let a = BigInteger()
-        let b = BigInteger(value: -42)
-        let c = BigInteger(value: 42)
-        
+        let a = BigInteger.zero
+        let b = BigInteger(-42)
+        let c = BigInteger(42)
+
         XCTAssertTrue(a > b, " \(a) > \(b)")
         XCTAssertTrue(b < a)
         XCTAssertTrue(a >= b)
@@ -24,13 +24,23 @@ class BigIntegerCompareTests: XCTestCase {
         XCTAssertTrue(c >= a)
         XCTAssertTrue(a <= c)
     }
-    
+
     func testCompare() {
-        let a = BigInteger(value: 42)
-        let b = BigInteger(value: -42)
-        
+        let a = BigInteger(42)
+        let b = BigInteger(-42)
+
         XCTAssertTrue(a > b)
         XCTAssertTrue(b < a)
+        XCTAssertTrue(a >= b)
+        XCTAssertTrue(b <= a)
+    }
+    
+    func testCompareNegatives() {
+        let a = BigInteger(-42)
+        let b = BigInteger(-42)
+        
+        XCTAssertFalse(a > b)
+        XCTAssertFalse(b < a)
         XCTAssertTrue(a >= b)
         XCTAssertTrue(b <= a)
     }

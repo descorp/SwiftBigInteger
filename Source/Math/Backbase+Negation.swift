@@ -10,7 +10,7 @@ import Foundation
 
 extension BigInteger {
     
-    // MARK: negation
+    ///
     static prefix func -(item: BigInteger) -> BigInteger {
         var result = item
         result.sign = !result.sign
