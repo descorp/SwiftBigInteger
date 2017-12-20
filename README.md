@@ -34,11 +34,9 @@ From integer primitives
 ```swift
         let a = BigInteger(1234567)
         a.sign // true
-```
 
-```swift
-        let a = BigInteger(UInt64(12345678901234))
-        a.sign // true
+        let b = BigInteger(UInt64(12345678901234))
+        b.sign // true
 ```
 
 From string
@@ -72,8 +70,6 @@ Shortcut for Big Integer with infinit magnitude
 
 ### Comparison
 
-Can be comared with other 'BigInteger' and Integer primitives
-
 ```swift
         let a = BigInteger(42)
         let b = BigInteger(-42)        
@@ -91,8 +87,6 @@ Can be comared with other 'BigInteger' and Integer primitives
 
 ### Addition
 
-Can perform addiotion with other 'BigInteger' and Integer primitives
-
 ```swift
         let a = BigInteger(42)
         let b = BigInteger(-42)        
@@ -104,8 +98,6 @@ Can perform addiotion with other 'BigInteger' and Integer primitives
 ```
 
 ### Substraction
-
-Can perform substraction with other 'BigInteger' and Integer primitives
 
 ```swift
         let a = BigInteger(42)
@@ -119,8 +111,6 @@ Can perform substraction with other 'BigInteger' and Integer primitives
 
 ### Multiplication
 
-Can perform multiplication with other 'BigInteger' and Integer primitives.
-
 ```swift
         let a = BigInteger(42)
         let b = BigInteger(-42)        
@@ -132,7 +122,6 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
 ```
 
 ### Division
-
 
 ```swift
         let a = BigInteger(145)
@@ -148,7 +137,6 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
 
 ### Reminder
 
-
 ```swift
         let a = BigInteger(145)
         let b = BigInteger(-12)        
@@ -160,7 +148,6 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
 ```
 
 ### Power
-
 
 ```swift
         let a = BigInteger(-12)
@@ -182,9 +169,11 @@ You can check tests for more examples like awesome Fibonacci 20000 calculation i
 
 Vladimir Abramichev, vladimir.abramichev@mail.ru
 
-## License
+## License and References
 
 BigIntegerSwift is available under the MIT license. See the LICENSE file for more info.
+
+Swift Image taken from <a href="https://icons8.com">Icon pack by Icons8</a>
 
 ## Todo
 
