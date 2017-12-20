@@ -1,6 +1,7 @@
 ![swift icon](https://png.icons8.com/?id=24465&size=96 "Icon pack by Icons8")
 # BigIntegerSwift
 
+![Standart](https://img.shields.io/badge/standart-IEEE--754-brightgreen.svg)
 [![Build Status](https://travis-ci.org/descorp/SwiftBigInteger.svg?branch=master)](https://travis-ci.org/descorp/SwiftBigInteger)
 ![Swift 3](https://img.shields.io/badge/Swift-3-blue.svg)
 [![Version](https://img.shields.io/cocoapods/v/BigIntSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntSwift)
@@ -11,6 +12,7 @@
 ## Description
 
 Library provides an implementation for Big Integer with basic arithmetics and conveniences. `BigInteger` is a threadsafe immutable struct and implements `Comparable`, `Equatable`, `CustomStringConvertible` and `Hashable` protocols.
+Build with respect of IEEE-754 standard
 
 ## Requirements
 
@@ -46,6 +48,28 @@ From string
         a.sign // false
 ```
 
+### Basic values
+
+Shortcut for Big Integer with zero magnitude. -Zero is could be handy in
+
+```swift
+        BigInteger.zero      // 0
+        -BigInteger.zero      // 0
+```
+
+Shortcut for "Non Arifhmetical value". A method or operator returns `nan` when the result of an operation is undefined. For example, the result of dividing zero by zero is NaN
+
+```swift
+        BigInteger.nan       // nan
+```
+
+Shortcut for Big Integer with infinit magnitude
+
+```swift
+        BigInteger.infinit   // inf
+        -BigInteger.infinit  // -inf
+```
+
 ### Comparison
 
 Can be comared with other 'BigInteger' and Integer primitives
@@ -77,8 +101,6 @@ Can perform addiotion with other 'BigInteger' and Integer primitives
         b + 42          //  0
         b + UInt(42)    //  0
         a += b          //  a = 0
-        b += 42         //  b = 0
-        a += UInt(42)   //  a = 84
 ```
 
 ### Substraction
@@ -92,9 +114,7 @@ Can perform substraction with other 'BigInteger' and Integer primitives
         a - b           //  84
         b - 42          // -84
         b - UInt(42)    // -84
-        a -= b          //  a = 84
-        a -= 42         //  a = -84 
-        a -= UInt(42)   //  a = -84          
+        a -= b          //  a = 84       
 ```
 
 ### Multiplication
@@ -109,13 +129,47 @@ Can perform multiplication with other 'BigInteger' and Integer primitives.
         b * (-1)        //  42
         b * UInt(2)     //  84
         a *= b          //  a = -1764
-        a *= -1         //  a = -42 
-        a *= UInt(2)    //  a = 84
 ```
 
 ### Division
 
-Todo
+
+```swift
+        let a = BigInteger(145)
+        let b = BigInteger(-12)        
+
+        a / -b                  //  12
+        a / 0                   //  inf
+        BigInteger.zero / 0     //  nan
+        b / (-1)                //  12
+        b / UInt(2)             //  6
+        a /= b                  //  a = -12
+```
+
+### Reminder
+
+
+```swift
+        let a = BigInteger(145)
+        let b = BigInteger(-12)        
+
+        a % -b          //  1
+        b % (-1)        //  0
+        b % UInt(2)     //  6
+        a %= b          //  a = -12
+```
+
+### Power
+
+
+```swift
+        let a = BigInteger(-12)
+        let b = BigInteger(2)        
+
+        a ^ b           //  144
+        a ^ 3           //  -1398
+        a ^ -3          //  nan
+```
 
 ## Example
 
@@ -134,5 +188,5 @@ BigIntegerSwift is available under the MIT license. See the LICENSE file for mor
 
 ## Todo
 
-* Division
+* Add pod usage examples
 * Optimise storing of values 
