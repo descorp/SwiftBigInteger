@@ -37,6 +37,13 @@ class BigIntegerMathPowerTests: XCTestCase {
         let result = a^2
         XCTAssertEqual(result.description, "4")
     }
+    
+    func testNegativePowerNegativeEven() {
+        let a = BigInteger(-2)
+        
+        let result = a^(-2)
+        XCTAssertEqual(result.description, "4")
+    }
 
     func testPowerNegativeOdd() {
         let a = BigInteger(-2)
