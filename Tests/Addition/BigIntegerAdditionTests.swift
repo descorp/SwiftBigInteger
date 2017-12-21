@@ -9,67 +9,91 @@
 import XCTest
 
 class BigIntegerAdditionTests: XCTestCase {
-    
+
     func testPostfixAdd() {
-        var a = BigInteger()
-        let b = BigInteger()
-        
+        var a = BigInteger.zero
+        let b = BigInteger.zero
+
         a += b
-        XCTAssertEqual(a, BigInteger())
+        XCTAssertEqual(a, BigInteger.zero)
         XCTAssertTrue(a.sign)
     }
-    
+
     func testAddZeroAndZero() {
-        let a = BigInteger()
-        let b = BigInteger()
-        
+        let a = BigInteger.zero
+        let b = BigInteger.zero
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger())
+        XCTAssertEqual(result, BigInteger.zero)
         XCTAssertTrue(result.sign)
     }
-    
+
     func testAddZeroAndOne() {
-        let a = BigInteger()
-        let b = BigInteger(value: 1)
-        
+        let a = BigInteger.zero
+        let b = BigInteger(1)
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger(value: 1))
+        XCTAssertEqual(result, BigInteger(1))
         XCTAssertTrue(result.sign)
     }
-    
+
     func testAddZeroAndMinusOne() {
-        let a = BigInteger()
-        let b = BigInteger(value: -1)
-        
+        let a = BigInteger(0)
+        let b = BigInteger(-1)
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger(value: -1))
+        XCTAssertEqual(result, BigInteger(-1))
         XCTAssertFalse(result.sign)
     }
-    
+
     func testAdd() {
-        let a = BigInteger(value: 12345)
-        let b = BigInteger(value: 12345)
-        
+        let a = BigInteger(12345)
+        let b = BigInteger(12345)
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger(value: 24690))
+        XCTAssertEqual(result, BigInteger(24690))
         XCTAssertTrue(result.sign)
     }
-    
+
     func testAddNegatives() {
-        let a = BigInteger(value: -12345)
-        let b = BigInteger(value: -12345)
-        
+        let a = BigInteger(-12345)
+        let b = BigInteger(-12345)
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger(value: -24690))
+        XCTAssertEqual(result, BigInteger(-24690))
         XCTAssertFalse(result.sign)
     }
-    
+
     func testAddOposite() {
-        let a = BigInteger(value: 12345)
-        let b = BigInteger(value: -12345)
-        
+        let a = BigInteger(12345)
+        let b = BigInteger(-12345)
+
         let result = a + b
-        XCTAssertEqual(result, BigInteger())
+        XCTAssertEqual(result, BigInteger.zero)
         XCTAssertTrue(result.sign)
+    }
+    
+    func testBigIntegerContainersAdd() {
+        let a: ContiguousArray<Int8> = [3,2,1]
+        let b: ContiguousArray<Int8> = [3,2,1]
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [6,4,2])
+    }
+    
+    func testBigIntegerContainersAddWithRightEmpty() {
+        let a: ContiguousArray<Int8> = [3,2,1]
+        let b: ContiguousArray<Int8> = []
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [3,2,1])
+    }
+    
+    func testBigIntegerContainersAddWithLeftEmpty() {
+        let a: ContiguousArray<Int8> = []
+        let b: ContiguousArray<Int8> = [3,2,1]
+        
+        let result = BigInteger.add(a, b)
+        XCTAssertEqual(result, [3,2,1])
     }
 }

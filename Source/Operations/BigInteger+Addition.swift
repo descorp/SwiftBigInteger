@@ -12,6 +12,26 @@ extension BigInteger {
     
     // MARK: addition
     static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign != lhs.sign  {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit && rhs.sign == lhs.sign  {
+            return lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return rhs
+        }
+        
         if lhs.sign == rhs.sign {
             let result = BigInteger.add(lhs.array, rhs.array)
             return BigInteger(raw: result, sign: lhs.sign)
@@ -21,35 +41,35 @@ extension BigInteger {
     }
     
     static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return lhs + BigInteger(value: rhs)
+        return lhs + BigInteger(rhs)
     }
     
     static func +(lhs: BigInteger, rhs: Int64) -> BigInteger {
-        return lhs + BigInteger(value: rhs)
+        return lhs + BigInteger(rhs)
     }
     
     static func +(lhs: BigInteger, rhs: UInt) -> BigInteger {
-        return lhs + BigInteger(value: rhs)
+        return lhs + BigInteger(rhs)
     }
     
     static func +(lhs: BigInteger, rhs: UInt64) -> BigInteger {
-        return lhs + BigInteger(value: rhs)
+        return lhs + BigInteger(rhs)
     }
     
     static func +(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return rhs + BigInteger(value: lhs)
+        return rhs + BigInteger(lhs)
     }
     
     static func +(lhs: Int64, rhs: BigInteger) -> BigInteger {
-        return rhs + BigInteger(value: lhs)
+        return rhs + BigInteger(lhs)
     }
     
     static func +(lhs: UInt, rhs: BigInteger) -> BigInteger {
-        return rhs + BigInteger(value: lhs)
+        return rhs + BigInteger(lhs)
     }
     
     static func +(lhs: UInt64, rhs: BigInteger) -> BigInteger {
-        return rhs + BigInteger(value: lhs)
+        return rhs + BigInteger(lhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -57,19 +77,19 @@ extension BigInteger {
     }
     
     static func +=(lhs: inout BigInteger, rhs: Int) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: Int64) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: UInt) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static func +=(lhs: inout BigInteger, rhs: UInt64) {
-        lhs = lhs + BigInteger(value: rhs)
+        lhs = lhs + BigInteger(rhs)
     }
     
     static internal func add(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {

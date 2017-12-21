@@ -12,8 +12,23 @@ extension BigInteger {
     
     // MARK: multiplication
     static func *(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
-        let zero = BigInteger()
-        if lhs == zero || rhs == zero {
+        if lhs.isNaN || rhs.isNaN {
+            return BigInteger.nan
+        }
+        
+        if lhs.isInfinit && rhs.isInfinit  {
+            return rhs.sign == lhs.sign ? BigInteger.infinit : -BigInteger.infinit
+        }
+        
+        if lhs.isInfinit {
+            return lhs
+        }
+        
+        if rhs.isInfinit {
+            return rhs
+        }
+        
+        if lhs.isZero || rhs.isZero {
             return zero
         }
         
@@ -22,35 +37,35 @@ extension BigInteger {
     }
     
     static func *(lhs: BigInteger, rhs: Int) -> BigInteger {
-        return lhs * BigInteger(value: rhs)
+        return lhs * BigInteger(rhs)
     }
     
     static func *(lhs: BigInteger, rhs: Int64) -> BigInteger {
-        return lhs * BigInteger(value: rhs)
+        return lhs * BigInteger(rhs)
     }
     
     static func *(lhs: BigInteger, rhs: UInt) -> BigInteger {
-        return lhs * BigInteger(value: rhs)
+        return lhs * BigInteger(rhs)
     }
     
     static func *(lhs: BigInteger, rhs: UInt64) -> BigInteger {
-        return lhs * BigInteger(value: rhs)
+        return lhs * BigInteger(rhs)
     }
     
     static func *(lhs: Int, rhs: BigInteger) -> BigInteger {
-        return rhs * BigInteger(value: lhs)
+        return rhs * BigInteger(lhs)
     }
     
     static func *(lhs: Int64, rhs: BigInteger) -> BigInteger {
-        return rhs * BigInteger(value: lhs)
+        return rhs * BigInteger(lhs)
     }
     
     static func *(lhs: UInt, rhs: BigInteger) -> BigInteger {
-        return rhs * BigInteger(value: lhs)
+        return rhs * BigInteger(lhs)
     }
     
     static func *(lhs: UInt64, rhs: BigInteger) -> BigInteger {
-        return rhs * BigInteger(value: lhs)
+        return rhs * BigInteger(lhs)
     }
     
     static func *=(lhs: inout BigInteger, rhs: BigInteger) {
@@ -58,19 +73,19 @@ extension BigInteger {
     }
     
     static func *=(lhs: inout BigInteger, rhs: Int) {
-        lhs = lhs * BigInteger(value: rhs)
+        lhs = lhs * BigInteger(rhs)
     }
     
     static func *=(lhs: inout BigInteger, rhs: Int64) {
-        lhs = lhs * BigInteger(value: rhs)
+        lhs = lhs * BigInteger(rhs)
     }
     
     static func *=(lhs: inout BigInteger, rhs: UInt) {
-        lhs = lhs * BigInteger(value: rhs)
+        lhs = lhs * BigInteger(rhs)
     }
     
     static func *=(lhs: inout BigInteger, rhs: UInt64) {
-        lhs = lhs * BigInteger(value: rhs)
+        lhs = lhs * BigInteger(rhs)
     }
     
     static internal func multiply(_ lhs: ContiguousArray<Int8>, _ rhs: ContiguousArray<Int8>) -> ContiguousArray<Int8> {
@@ -102,10 +117,7 @@ extension BigInteger {
                         t.append(value / 10)
                     } else {
                         let additionValue = t[j + 1] + value / 10
-                        t[j+1] = additionValue % 10
-                        if additionValue > 9 {
-                            t.append(1)
-                        }
+                        t[j+1] = additionValue
                     }
                 }
             }
