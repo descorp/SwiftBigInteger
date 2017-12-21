@@ -155,7 +155,7 @@ Shortcut for Big Integer with infinit magnitude
 
         a ^ b           //  144
         a ^ 3           //  -1398
-        a ^ -3          //  nan
+        a ^ -3          //  -1398 (sign ignored)
 ```
 
 ## Example
