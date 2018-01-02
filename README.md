@@ -144,7 +144,7 @@ Shortcut for Big Integer with infinit magnitude
         a % -b          //  1
         b % (-1)        //  0
         b % UInt(2)     //  6
-        a %= b          //  a = -12
+        a %= b          //  a = -1
 ```
 
 ### Power
