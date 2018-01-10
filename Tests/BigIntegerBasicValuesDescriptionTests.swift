@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import BigInteger
 
 class BigIntegerBasicValuesDescriptionTests: XCTestCase {
     

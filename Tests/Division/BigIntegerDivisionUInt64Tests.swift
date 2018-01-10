@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import BigInteger
 
 class BigIntegerDivisionIUInt64Tests: XCTestCase {
 
