@@ -10,7 +10,7 @@ import Foundation
 
 extension BigInteger {
     
-    static func abs(_ value: BigInteger ) -> BigInteger {
+    public static func abs(_ value: BigInteger ) -> BigInteger {
         var temp : BigInteger = value
         temp.sign = true
         return temp

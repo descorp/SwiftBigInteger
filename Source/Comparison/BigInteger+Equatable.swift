@@ -20,7 +20,7 @@ extension BigInteger: Equatable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ==(lhs: BigInteger, rhs: BigInteger) -> Bool {
+    public static func ==(lhs: BigInteger, rhs: BigInteger) -> Bool {
         if lhs.isNaN || lhs.isNaN {
             return false
         }

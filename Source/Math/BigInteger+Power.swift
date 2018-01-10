@@ -11,19 +11,19 @@ import Foundation
 extension BigInteger {
 
     ///
-    static func ^(lhs: BigInteger, rhs: Int) -> BigInteger {
+    public static func ^(lhs: BigInteger, rhs: Int) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(Swift.abs(rhs)))
     }
     
-    static func ^(lhs: BigInteger, rhs: Int64) -> BigInteger {
+    public static func ^(lhs: BigInteger, rhs: Int64) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(Swift.abs(rhs)))
     }
     
-    static func ^(lhs: BigInteger, rhs: UInt) -> BigInteger {
+    public static func ^(lhs: BigInteger, rhs: UInt) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(rhs))
     }
     
-    static func ^(lhs: BigInteger, rhs: UInt64) -> BigInteger {
+    public static func ^(lhs: BigInteger, rhs: UInt64) -> BigInteger {
         return BigInteger.pow(lhs: lhs, rhs: UInt64(rhs))
     }
     

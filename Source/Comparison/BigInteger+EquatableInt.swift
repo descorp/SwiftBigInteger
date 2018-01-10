@@ -18,22 +18,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ==(lhs: Int, rhs: BigInteger) -> Bool {
+    public static func ==(lhs: Int, rhs: BigInteger) -> Bool {
         let temp = BigInteger(lhs)
         return temp == rhs
     }
     
-    static func ==(lhs: Int64, rhs: BigInteger) -> Bool {
+    public static func ==(lhs: Int64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(lhs)
         return temp == rhs
     }
     
-    static func ==(lhs: UInt, rhs: BigInteger) -> Bool {
+    public static func ==(lhs: UInt, rhs: BigInteger) -> Bool {
         let temp = BigInteger(lhs)
         return temp == rhs
     }
     
-    static func ==(lhs: UInt64, rhs: BigInteger) -> Bool {
+    public static func ==(lhs: UInt64, rhs: BigInteger) -> Bool {
         let temp = BigInteger(lhs)
         return temp == rhs
     }
@@ -46,22 +46,22 @@ extension BigInteger {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func ==(lhs: BigInteger, rhs: Int) -> Bool {
+    public static func ==(lhs: BigInteger, rhs: Int) -> Bool {
         let temp = BigInteger(rhs)
         return temp == lhs
     }
     
-    static func ==(lhs: BigInteger, rhs: Int64) -> Bool {
+    public static func ==(lhs: BigInteger, rhs: Int64) -> Bool {
         let temp = BigInteger(rhs)
         return temp == lhs
     }
     
-    static func ==(lhs: BigInteger, rhs: UInt) -> Bool {
+    public static func ==(lhs: BigInteger, rhs: UInt) -> Bool {
         let temp = BigInteger(rhs)
         return temp == lhs
     }
     
-    static func ==(lhs: BigInteger, rhs: UInt64) -> Bool {
+    public static func ==(lhs: BigInteger, rhs: UInt64) -> Bool {
         let temp = BigInteger(rhs)
         return temp == lhs
     }

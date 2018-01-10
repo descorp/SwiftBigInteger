@@ -11,7 +11,7 @@ import Foundation
 extension BigInteger {
     
     ///
-    static prefix func -(item: BigInteger) -> BigInteger {
+    public static prefix func -(item: BigInteger) -> BigInteger {
         var result = item
         result.sign = !result.sign
         return result

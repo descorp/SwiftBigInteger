@@ -11,7 +11,7 @@ import Foundation
 extension BigInteger {
     
     // MARK: addition
-    static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+    public static func +(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
         if lhs.isNaN || rhs.isNaN {
             return BigInteger.nan
         }
@@ -40,55 +40,55 @@ extension BigInteger {
         return lhs - -rhs
     }
     
-    static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
+    public static func +(lhs: BigInteger, rhs: Int) -> BigInteger {
         return lhs + BigInteger(rhs)
     }
     
-    static func +(lhs: BigInteger, rhs: Int64) -> BigInteger {
+    public static func +(lhs: BigInteger, rhs: Int64) -> BigInteger {
         return lhs + BigInteger(rhs)
     }
     
-    static func +(lhs: BigInteger, rhs: UInt) -> BigInteger {
+    public static func +(lhs: BigInteger, rhs: UInt) -> BigInteger {
         return lhs + BigInteger(rhs)
     }
     
-    static func +(lhs: BigInteger, rhs: UInt64) -> BigInteger {
+    public static func +(lhs: BigInteger, rhs: UInt64) -> BigInteger {
         return lhs + BigInteger(rhs)
     }
     
-    static func +(lhs: Int, rhs: BigInteger) -> BigInteger {
+    public static func +(lhs: Int, rhs: BigInteger) -> BigInteger {
         return rhs + BigInteger(lhs)
     }
     
-    static func +(lhs: Int64, rhs: BigInteger) -> BigInteger {
+    public static func +(lhs: Int64, rhs: BigInteger) -> BigInteger {
         return rhs + BigInteger(lhs)
     }
     
-    static func +(lhs: UInt, rhs: BigInteger) -> BigInteger {
+    public static func +(lhs: UInt, rhs: BigInteger) -> BigInteger {
         return rhs + BigInteger(lhs)
     }
     
-    static func +(lhs: UInt64, rhs: BigInteger) -> BigInteger {
+    public static func +(lhs: UInt64, rhs: BigInteger) -> BigInteger {
         return rhs + BigInteger(lhs)
     }
     
-    static func +=(lhs: inout BigInteger, rhs: BigInteger) {
+    public static func +=(lhs: inout BigInteger, rhs: BigInteger) {
         lhs = lhs + rhs
     }
     
-    static func +=(lhs: inout BigInteger, rhs: Int) {
+    public static func +=(lhs: inout BigInteger, rhs: Int) {
         lhs = lhs + BigInteger(rhs)
     }
     
-    static func +=(lhs: inout BigInteger, rhs: Int64) {
+    public static func +=(lhs: inout BigInteger, rhs: Int64) {
         lhs = lhs + BigInteger(rhs)
     }
     
-    static func +=(lhs: inout BigInteger, rhs: UInt) {
+    public static func +=(lhs: inout BigInteger, rhs: UInt) {
         lhs = lhs + BigInteger(rhs)
     }
     
-    static func +=(lhs: inout BigInteger, rhs: UInt64) {
+    public static func +=(lhs: inout BigInteger, rhs: UInt64) {
         lhs = lhs + BigInteger(rhs)
     }
     

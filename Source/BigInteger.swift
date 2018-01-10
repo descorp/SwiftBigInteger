@@ -9,7 +9,7 @@
 import Foundation
 
 /// Implementation of Big integer value.
-struct BigInteger {
+public struct BigInteger {
     
     typealias Container = ContiguousArray<Int8>
     
@@ -20,10 +20,10 @@ struct BigInteger {
     // MARK: Public static values
     
     /// Shortcut for BigInteger with zero value
-    static let zero: BigInteger = BigInteger.init(raw: [0], sign: true)
+    public static let zero: BigInteger = BigInteger.init(raw: [0], sign: true)
     
     /// Return true if current BigInteger is zero
-    var isZero: Bool {
+    public var isZero: Bool {
         return self.array.count == 1 && array[0] == 0
     }
     
@@ -46,10 +46,10 @@ struct BigInteger {
     ///     // Prints "false"
     ///     print(y.isNaN)
     ///     // Prints "true"
-    static let nan: BigInteger = BigInteger(raw: [], sign: true)
+    public static let nan: BigInteger = BigInteger(raw: [], sign: true)
     
     /// Return true if current BigInteger is NaN
-    var isNaN: Bool {
+    public var isNaN: Bool {
         return self.array == []
     }
     
@@ -61,10 +61,10 @@ struct BigInteger {
     ///     BigInteger.infinity  >  BigInteger.infinity // false
     ///     BigInteger.infinity  <  BigInteger.infinity // false
     ///     BigInteger.infinity ==  BigInteger.infinity // true
-    static let infinit: BigInteger = BigInteger(raw: [99], sign: true)
+    public static let infinit: BigInteger = BigInteger(raw: [99], sign: true)
     
     /// Returns true if current BigInteger is Infinite
-    var isInfinit: Bool {
+    public var isInfinit: Bool {
         return self.array != [] && self.array[0] > 9
     }
     
@@ -79,7 +79,7 @@ struct BigInteger {
     ///
     /// Converts unsigned integer into Big integer.
     /// - Parameter value: UInt
-    init<T: UnsignedInteger>(_ value: T) {
+    public init<T: UnsignedInteger>(_ value: T) {
         sign = true
         array = Container(value.asNumericArray())
     }
@@ -88,7 +88,7 @@ struct BigInteger {
     ///
     /// Converts signed simple integer into Big Integer.
     /// - Parameter value: value of Int
-    init<T: SignedInteger>(_ value: T) {
+    public init<T: SignedInteger>(_ value: T) {
         sign = value >= 0
         array = Container(value.asNumericArray())
     }
@@ -100,7 +100,7 @@ struct BigInteger {
     /// Any other non-numeric charecter will be ignored.
     /// - Parameter value: string containing big integer.
     ///
-    init?(_ value: String) {
+    public init?(_ value: String) {
         
         let temp = value.removeNoneNumericCharecters()
         guard !temp.isEmpty else { return nil }

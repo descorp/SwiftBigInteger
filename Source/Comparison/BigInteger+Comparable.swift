@@ -21,7 +21,7 @@ extension BigInteger: Comparable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
+    public static func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
         if lhs.isNaN || rhs.isNaN {
             return false
         }
@@ -39,7 +39,7 @@ extension BigInteger: Comparable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func <=(lhs: BigInteger, rhs: BigInteger) -> Bool {
+    public static func <=(lhs: BigInteger, rhs: BigInteger) -> Bool {
         if lhs.isNaN || rhs.isNaN {
             return false
         }
@@ -57,7 +57,7 @@ extension BigInteger: Comparable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func >=(lhs: BigInteger, rhs: BigInteger) -> Bool {
+    public static func >=(lhs: BigInteger, rhs: BigInteger) -> Bool {
         if lhs.isNaN || rhs.isNaN {
             return false
         }
@@ -75,7 +75,7 @@ extension BigInteger: Comparable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func >(lhs: BigInteger, rhs: BigInteger) -> Bool {
+    public static func >(lhs: BigInteger, rhs: BigInteger) -> Bool {
         if lhs.isNaN || rhs.isNaN {
             return false
         }
