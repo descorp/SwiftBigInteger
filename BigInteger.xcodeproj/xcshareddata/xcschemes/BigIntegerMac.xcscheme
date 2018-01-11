@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "40840EF1200667A30031752D"
-               BuildableName = "BigIntegerMac.framework"
+               BuildableName = "BigInteger.framework"
                BlueprintName = "BigIntegerMac"
                ReferencedContainer = "container:BigInteger.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40840EF1200667A30031752D"
-            BuildableName = "BigIntegerMac.framework"
+            BuildableName = "BigInteger.framework"
             BlueprintName = "BigIntegerMac"
             ReferencedContainer = "container:BigInteger.xcodeproj">
          </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40840EF1200667A30031752D"
-            BuildableName = "BigIntegerMac.framework"
+            BuildableName = "BigInteger.framework"
             BlueprintName = "BigIntegerMac"
             ReferencedContainer = "container:BigInteger.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40840EF1200667A30031752D"
-            BuildableName = "BigIntegerMac.framework"
+            BuildableName = "BigInteger.framework"
             BlueprintName = "BigIntegerMac"
             ReferencedContainer = "container:BigInteger.xcodeproj">
          </BuildableReference>
