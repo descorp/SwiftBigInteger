@@ -30,7 +30,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "40840EF9200667A30031752D"
+               BuildableName = "BigIntegerMacTests.xctest"
+               BlueprintName = "BigIntegerMacTests"
+               ReferencedContainer = "container:BigInteger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "40840EF1200667A30031752D"
+            BuildableName = "BigIntegerMac.framework"
+            BlueprintName = "BigIntegerMac"
+            ReferencedContainer = "container:BigInteger.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
