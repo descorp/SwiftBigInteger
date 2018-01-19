@@ -25,7 +25,6 @@ before_install:
 
 script:
   - set -o pipefail
-  if()
   - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clear $ACTION | xcpretty
 
 after_success:
