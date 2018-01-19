@@ -12,8 +12,8 @@ env:
   - OSX_FRAMEWORK_SCHEME="BigIntegerMac"
   - PROJECT="BigInteger.xcodeproj"
   matrix:
-  - DESTINATION="OS=11.1,name=iPhone 6"            SCHEME="$IOS_FRAMEWORK_SCHEME"
-  - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME" 
+  - DESTINATION="OS=11.1,name=iPhone 6"            SCHEME="$IOS_FRAMEWORK_SCHEME"       ACTION="test"
+  - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"       ACTION="build"
 
 before_install:
   - brew update
@@ -25,7 +25,8 @@ before_install:
 
 script:
   - set -o pipefail
-  - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" build test | xcpretty
+  if()
+  - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clear $ACTION | xcpretty
 
 after_success:
   - pod lib lint
