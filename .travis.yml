@@ -25,7 +25,7 @@ before_install:
 
 script:
   - set -o pipefail
-  - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clear $ACTION | xcpretty
+  - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clean $ACTION | xcpretty
 
 after_success:
   - pod lib lint
