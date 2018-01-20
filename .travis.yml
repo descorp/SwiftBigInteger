@@ -12,8 +12,8 @@ env:
   - OSX_FRAMEWORK_SCHEME="BigIntegerMac"
   - PROJECT="BigInteger.xcodeproj"
   matrix:
-  - DESTINATION="OS=11.1,name=iPhone 6"            SCHEME="$IOS_FRAMEWORK_SCHEME"       ACTION="test"
-  - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"       ACTION="build"
+  - DESTINATION="OS=11.1,name=iPhone 6"            SCHEME="$IOS_FRAMEWORK_SCHEME"       ACTION="build test"
+  - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"       ACTION="build test"
 
 before_install:
   - brew update
