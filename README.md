@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BigIntSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntSwift)
 [![License](https://img.shields.io/cocoapods/l/BigIntSwift.svg?style=flat)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/cocoapods/p/BigIntSwift.svg?style=flat)](http://cocoapods.org/pods/BigIntSwift)
-[![codecov](https://codecov.io/gh/descorp/OpenAir/branch/master/graph/badge.svg)](https://codecov.io/gh/descorp/OpenAir)
+[![codecov](https://codecov.io/gh/descorp/SwiftBigInteger/branch/master/graph/badge.svg)](https://codecov.io/gh/descorp/SwiftBigInteger)
 
 ## Description
 
